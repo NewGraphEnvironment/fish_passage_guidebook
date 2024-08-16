@@ -1,0 +1,158 @@
+
+
+# Mapping
+
+We use QGIS and Mergin Maps for our fish passage data management and analysis. This section will get you started with our mapping procedures.
+
+## QGIS
+
+* QGIS (Quantum Geographic Information System) is a free, open-source software that allows users to create, edit, visualize, analyze, and publish geospatial information.
+
+* Follow this link to the [QGIS Download Page](https://www.qgis.org/en/site/forusers/download.html) to install the latest version.
+
+* Here is some great info for getting up to speed with the [basics of QGIS](https://courses.spatialthoughts.com/introduction-to-qgis.html)
+
+
+## Mergin Maps
+
+[Mergin Maps](https://merginmaps.com/) is a geodata platform that allows us to collaborate with others by collecting data in the field and syncing to a shared QGIS project. Check out the [Mergin Maps documentation](https://merginmaps.com/docs/) for more information.
+
+### Set up 
+
+Set up Mergin Maps with QGIS on your laptop:
+
+  1. Follow the instruction to [sign up for a free mergin account](https://merginmaps.com/docs/setup/sign-up-to-mergin-maps/)
+  
+  2. Make sure you have the latest version of QGIS installed
+  
+  3. Install the [Mergin Maps plugin](https://merginmaps.com/docs/setup/install-mergin-maps-plugin-for-qgis/)
+  
+  4. Install the Mergin Maps app on your phone (we use this during field season)
+  
+  5. We will send you an invitation to join the `newgraph` Mergin workspace.
+  
+  
+Set up Mergin Maps on your phone, following the [instructions here](https://merginmaps.com/docs/setup/install-mobile-app/).
+
+
+
+### View projects 
+
+  1. Accepted the invitation.
+  
+  2. Switch to the `newgraph` workspace following [these instructions](https://merginmaps.com/docs/manage/workspaces/#switch-workspaces-in-qgis). Our project will show up in the "Mergin Maps" tab of the "Browser" window.
+  
+```{r mergin-projects, fig.cap = 'Viewing New Graph's Mergin projects',eval=T}
+knitr::include_graphics("fig/mapping/mergin_projects.png")
+```
+
+  
+  3. Right click the project name and select "Download". 
+  
+  4. Save the project somewhere appropriate. For New Graph employees this should be `Projects/gis`.
+  
+  5. Double click or right click to open the project. 
+  
+
+### Common actions
+
+Below are some common actions we use in QGIS.
+
+  1. We use themes to simplifying viewing projects. You can select a theme by clicking the eye icon in Layers Panel. 
+  
+```{r themes, fig.cap = 'How to finding features in QGIS',eval=T}
+knitr::include_graphics("fig/mapping/themes.png")
+```
+  
+  2. Finding a feature such as a culvert, stream, or else anything on the map. Use `Select feature by value`. Then input your search term and select `zoom to feature`, for example looking for the site `15600301`. 
+  
+```{r find-feature, fig.cap = 'How to finding features in QGIS',eval=T}
+knitr::include_graphics("fig/mapping/finding_feature.png")
+knitr::include_graphics("fig/mapping/site_search.png")
+```
+
+  2. Getting information about a feature ("Identify Feature"). Make sure you have the layer selected, then Select the "Identify Features" tool and click on the feature you want to know more about.
+
+```{r identify-feature, fig.cap = 'How to see feature info in QGIS',eval=T}
+knitr::include_graphics("fig/mapping/identify_feature.png")
+```
+ 
+  3. Copy information from a feature. Select the row then hover your cursor over the text you want to copy then `cmd+c` to copy.
+
+```{r copy-feature, fig.cap = 'How to copy information from a features in QGIS',eval=T}
+knitr::include_graphics("fig/mapping/copy_feature_info.png")
+```
+
+  4. Creating maps with `Projects/print layout`. This is where you can create a map that can be exported as an image or pdf. Below is an example of a map layout. Check out [this video](https://www.youtube.com/watch?v=OlDGEVhpmo0) for how to make maps.
+
+```{r qgis-maps, fig.cap = 'How to create and export maps in QGIS',eval=T}
+knitr::include_graphics("fig/mapping/qgis_maps.png")
+```
+
+
+### Editing a Project
+
+- Sync the project [following these instructions](https://merginmaps.com/docs/manage/synchronisation/#how-to-synchronise-changes-in-mergin-maps) before making any edits to make sure you have the most up to date version of the project. Others may have edited the project since you last opened it.
+
+- Make sure to sync the project [following these instructions](https://merginmaps.com/docs/manage/synchronisation/#how-to-synchronise-changes-in-mergin-maps) after making any edits.
+
+
+### Using Mergin on a phone
+
+- We find that Mergin works much better (faster rendering) with *airplane* mode on.    
+
+### Field Data Entry into Mergin
+
+- Over the last year we have seen uncommon issues with syncing and data corruption that provide even more incentive to be sure to do paper copies of the forms as well. 
+- There are links to the methods docs in the forms with the intention that you can save them to your phone.  Obviously, the provincial method documents are key.
+- Switching between themes is very useful in the field. You can add more in QGIS.
+- Site ID is important:
+  - If a site has a PSCIS ID then that is used as the identifier. 
+  - If there is no PSCIS ID we use the "Crossing - Modelled ID" (a.k.a "My Crossing Reference") as the "Modelled ID". If there is neither (rare but usually occurs when a stream is not mapped) we use a numeric ID based on the date (YYYYMMDD01 - example 2023070502 - would be our second assessment for today).
+  - If there is an associated chris_culvert_id ("MoTi" identifier) we include that as well. We take a photo of the road with the PSCIS ID or Modelled ID in the corner and upload photos to mergin that are
+- When we first arrive at a site we take a photo of the road with the PSCIS ID or Modelled ID in the corner. This allows easy reference to which photos are for which sites. When we are done filling out the paper form we take a photo of it (for data backup and to make it easy to see which photos are from where).
+- At this point in time the climate change metrics are a touch subjective and poorly defined.  We will be refining them later but for now it is effective for comparing one site to the next. Keen on your feedback as this was passed on to us as is and we have some ideas too about ways to simplify/standardize things.
+- The "FDS" and "Site Card/Fish form" stuff in the "ignore_mobile/templates" directory are what we use for Habitat Confirmation (Phase 2) work as it allows us to standardize data collection and upload more detailed habitat/fish information to the province.  
+
+
+### Office
+
+- Project creation is done with `bcdata.sh` and `background_layers.sh` found in https://github.com/NewGraphEnvironment/dff-2022/tree/master/scripts/qgis.  See the readme for instructions. 
+
+- There is a directory in the project called `ignore_mobile` which contain the site photos. The project directory also contains the methods and templates for paper data collection, as well as the excel files that are used to upload the data to the province. The provincial method documents are obviously key to review, print and have on hand in the field.
+
+- To understand how the modelling for fish habitat works you can [review the settings](https://github.com/smnorris/bcfishpass/blob/main/data/parameters_habitat_thresholds.csv) we use in bcfishpass. We used the channel width method for our projects.
+
+-  the whole setup is quite beta and it is not straightforward at this time to get the data from the form geopackage in QGIS into the templates used for data submission to the province we are using `*_tidy.R` scripts to do that and they are evolving over time here ( https://github.com/NewGraphEnvironment/dff-2022/tree/master/scripts ). 
+
+### Labelling
+
+It is important to develop workflows to streamline labeling and avoid hand work in the map layout viewer. Helpful details and tips include:
+
+* Avoid labeling in the map layout viewer, as soon as your project map changes you have to redo labels.
+* Adjust/move labels in the project view, using the abc labels (shown below)
+
+```{r label, eval=T}
+knitr::include_graphics("fig/mapping/labels.png")
+```
+
+* Align labels in project view by using the "View current map extent in main canvas" button in the layout viewer.
+* If you need to add labels by hand sometimes you can add a line layer with no symbology and add features with a "label" field. Then you can put them where you want and they will be flexible if you shift your map around.
+* Another technique is duplicating layers for a particular layout and changing the label symbology.
+
+<br>
+
+
+
+## LiDAR
+
+Light detection and ranging (LiDAR) is a technology that can be used to create high resolution Digital Elevation Models (DEMs). These DEMs can give us a better idea of what is happening in a watershed at a site of interest. 
+
+* LiDAR point cloud data and DEMs can be found on the [LiDAR BC Portal](https://governmentofbc.maps.arcgis.com/apps/MapSeries/index.html?appid=d06b37979b0c4709b7fcf2a1ed458e03).
+* Downloading DEMs is the way to go. However, if there is only LiDAR point cloud data available then you can convert to a DEM. A tutorial on the process can be found on OneDrive [here](https://onedrive.live.com/?cid=D3D3332E1628A93C&id=D3D3332E1628A93C%21291796&parId=D3D3332E1628A93C%21275627&o=OneUp). 
+* We can link directly to online data using raster/https connection (example shown in screenshot below)
+
+```{r raster-http, fig.cap = 'How to connect to raster in QGIS data source manager',eval=T}
+knitr::include_graphics("fig/raster_http.png")
+```
+
