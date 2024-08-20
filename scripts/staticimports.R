@@ -45,8 +45,8 @@ my_dt_table <-   function(dat,
 my_leaflet <- function(height = 650, width = 970){
   leaflet::leaflet(height = height, width = width) |>
     leaflet::addTiles() |>
-    leaflet::addProviderTiles("Esri.WorldTopoMap", group = "Topo") |>
     leaflet::addProviderTiles("Esri.WorldImagery", group = "Ortho") |>
+    leaflet::addProviderTiles("Esri.WorldTopoMap", group = "Topo") |>
     leaflet.extras::addFullscreenControl()
 }
 
