@@ -3,7 +3,7 @@ preview_chapter('0100-intro.Rmd')
 
 # define if we want to update the bib - don't need to if we leave as detailed in the index.Rmd params: Willj
 # need to pull out of the bookdown::render_book call though
-update_bib <- FALSE
+update_bib <- TRUE
 
 # add/update the NEWS.md to the book as an appendix and build the gitbook
 {
@@ -21,7 +21,9 @@ update_bib <- FALSE
 ################################################################################################################
 ##move the phase 1 appendix out of the main directory to a backup file or else the file is too big
 # define the _bookfile_name from _bookdown.yml
-filename_html <- 'mybookdown_template'
+# need to run the setup chunk in the index.Rmd first to get the correct file name (not sure this is the best approach)
+filename_html <- basename(params$repo_url)
+
 
 {
 

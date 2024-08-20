@@ -4,11 +4,11 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">My Bookdown Template</a></li>
+        <li><a href="./">MFish Passage Guidebook</a></li>
       after: |
         <li><a href="https://github.com/NewGraphEnvironment/mybookdown-template" target="blank">Scripts and Data</a></li>
       collapse: section
-    download: ["mybookdown_teplate.pdf", "mybookdown_teplate.html"]
+    download: ["fish_passage_guidebook.pdf", "fish_passage_guidebook.html"]
     fontsettings:
       theme: night
       family: sans
