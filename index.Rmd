@@ -1,5 +1,5 @@
 --- 
-title: "My Bookdown Template"
+title: "Fish Passage Guidebook"
 author: |
  |
  | Prepared for
@@ -20,8 +20,8 @@ output:
           includes:
             in_header: header.html
 params:
-  repo_url: 'https://github.com/NewGraphEnvironment/mybookdown-template/'
-  report_url: 'https://newgraphenvironment.github.io/mybookdown-template'
+  repo_url: 'https://github.com/NewGraphEnvironment/fish_passage_guidebook/'
+  report_url: 'https://newgraphenvironment.github.io/fish_passage_guidebook'
   update_packages: FALSE
   update_bib: TRUE
   gitbook_on: TRUE
@@ -32,7 +32,7 @@ bibliography: "`r if (params$update_bib) { rbbt::bbt_write_bib('references.bib',
 biblio-style: apalike
 link-citations: no
 github-repo: rstudio/bookdown-demo
-description: "My Description."
+description: "A guidebook to get you set up with New Graph Environment's fish passage assessment protocols"
 lof: true
 
 ---
