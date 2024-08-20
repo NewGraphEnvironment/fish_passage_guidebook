@@ -1,41 +1,54 @@
-# Safety and Equipement
+# Safety and Equipment
 
-You can find our detailed Health and Safety Plan here https://www.newgraphenvironment.com/hsp/. 
+Learning and evolving a safety program couldn't be more important. We need to do everything we can to look after ourselves and each other.  Overall - some of the biggest things we can do is make sure people know where we are and when we are coming home, what communications are expected, we assess the hazzards and minimize there risk.  Having the right equipment is a huge part of that. You can find our detailed Health and Safety Plan here https://www.newgraphenvironment.com/hsp/.  It changes all the time and those changes are reflected in our project specific safety plans and tailboard meetings.  
 
 ## Field Safety Plans
 
-Field safety plans are written up before traveling to any job site. Information included in these plans include:
+Field safety plans are written up before traveling to any job site. An example of a somewhat recent plan can be foudn here http://www.newgraphenvironment.com/safety_plan_skeena_2023/ .  Information included in these plans include
 
-- Location and contact info of accommodations where employees are staying.
-- Description of personal and company vehicles.
-- Crew member contact details, including emergency contacts.
-- Personal and crew equipment checklist.
+- Check in and failed check in procedures. Who is watching our back and what communications need to happen for us to be considered safe.  If those communications don't happen what does the "back watcher" do about it!
+- Location and contact info of field crew and check in person (including emergency contacts) as well as the accommodations where everyone is staying (as a back up to follow up if direct communications break down).
+- Description of field crew vehicles so that people can go looking for the crew with that info if they don't show up when/where they are supposed to.
+- Personal and crew equipment checklists.
 - Location and contact info of nearest hospital.
-- Check in and failed check in procedures.
 - A brief description of the job, as well as map links and a list of possible locations where crew members will visit.
 
 ## Check-in Procedures and Field Communications
-Call, text or in reach emergency contact each morning to share the plan for the day (i.e. name of roads and sites). Agree on a regular daily check in time and report position/provide updates.
+Call, text or in reach emergency contact each morning to share the plan for the day (i.e. name of roads and sites). Agree on a regular daily check in time and report position/provide updates. Agree on a final time that people need to check in by and what happens if they don't.  Often we group text to our check in person before we leave accommodations in the morning with our general pla.  Example below:
 
-## Personal Protective Equipement (PPE)
+1. 8:00 am -  "we are working up Morice-Owen FSR all day (electrofgishing and habitat confirmation walks) and will be without cell. This are is west of Houston.  We will check in early afternoon with the satellite communicator."). 
+2. 1:00 pm - we are electrofishing at site 12345 located at km25 of the Fern Creek FSR accessed off of the Morice-Owen.  All is good. We may be a bit late getting home.
+3. 5:00 pm - we are on our way home.  We will check in when we get back to the accommodations. It might be a bit after our 7:00pm hard check-in deadline so don't worry. We should be back before 8 for sure.
+4. 7:15 pm - we are both home safe! Thank you. Have a great night!
 
-The following provides a guideline to the requirements and use of PPE. A full listing of requirements can be found in the Occupational Health and Safety Regulation at https://www.worksafebc.com/en/law-policy/occupational-health-safety/searchable-ohs-regulation/ohs-regulation/part-08-personal-protective-clothing-and-equipment
+## Safety Gear
+
+The following provides a list of safety gear that we commonly carry as well as key equipment that is part of our standard field equipment for fish passage work (ie. fish passage assessments, fish habitat confirmations, follow up monitoring, electrofishing, drone surveys, etc.).
 
 ```{r ppe, eval=T}
 readr::read_csv(
   url(("https://raw.githubusercontent.com/NewGraphEnvironment/new_graphiti/main/assets/data/equipment.csv")
   )
 )|> 
-  filter(!is.na(eq_pers_standard)) |> 
-  select(eq_item) |> 
-  fpr::fpr_kable(font = 12)
+  # filter(!is.na(eq_pers_standard)) |> 
+  select(eq_item:eq_task3) |> 
+  # remove "all" for now
+  select(-eq_task1) |> 
+  # still need to replace all values with x (one liner with dplyr funciton i believe)
+  purrr::set_names(c("item", "personal_standard", "truck", "safety", "electrofishing", "fish_passage")) |>
+  my_dt_table(cols_freeze_left = 0)
 ```
 
 
 
 ## Tailboards
 
-Tailboard meetings are a way to reset at the start of new work tasks to put safety first as the top priority at all places of work. Our tailboard template is unique in that it contains documentation of numerous safety policy actions in one place. Tailboards include references to field safety plans and contain:
+Tailboard meetings are a way to reset at the start of new work tasks to put safety first as the top priority at all places of work. Our tailboard template is unique in that it contains documentation of numerous safety policy actions in one place. Tailboards help us identify hazzards so we can mitigated their risk and communicate about past experience where we learned how to avoid injuries. 
+
+<br>
+
+A copy of our tailboard can be found here https://github.com/NewGraphEnvironment/hsp/blob/master/data/form_templates/tailboard_template.pdf and some of the key components are as follows:
+
 
 - Site Assessments, Hazard Identifications and Risk Assessments
 - Worker Assessments
@@ -47,23 +60,7 @@ Tailboard meetings are a way to reset at the start of new work tasks to put safe
 - First Aid Assessments
 
 
-A copy of our tailboard can be found here https://github.com/NewGraphEnvironment/hsp/blob/master/data/form_templates/tailboard_template.pdf.
 
-
-## Equipment 
-
-Ensure you have the required equipment. A detailed list is below. 
-
-
-```{r equipment, eval=T}
-readr::read_csv(
-  url(("https://raw.githubusercontent.com/NewGraphEnvironment/new_graphiti/main/assets/data/equipment.csv")
-  )
-)|> 
-  filter(!is.na(eq_task3)) |> 
-  select(eq_item) |> 
-  fpr::fpr_kable(font = 12)
-```
 
 
 ## Fieldwork checklist
