@@ -1,0 +1,94 @@
+
+# Mapping
+
+We use QGIS, and Mergin Maps for our fish passage data management and analysis. Before heading out into the field, we research the area we will be going to by visualizing the area on QGIS. [QGIS](https://qgis.org/) (Quantum Geographic Information System) is a free, open-source software that allows users to create, edit, visualize, analyze, and publish geospatial information [@qgisdevelopmentteam2009QGISgeographic]. [Mergin Maps](https://merginmaps.com/) is a geodata platform that allows us to collaborate with others by collecting data in the field and syncing to a shared QGIS project [@merginmaps2023mergin]. Check out the [Mergin Maps documentation](https://merginmaps.com/docs/) for more information.
+
+<br>
+
+This section will get you started with all our mapping procedures.
+
+
+## Mergin Maps on your computer
+
+Map creation, research, planning, and data QA takes place using QGIS and Mergin Maps on our computers.
+
+### Set up
+
+Set up QGIS on your computer:
+
+* Follow this link to the [QGIS Download Page](https://www.qgis.org/en/site/forusers/download.html) to install the latest version.
+
+* Here is some great info for getting up to speed with the [basics of QGIS](https://courses.spatialthoughts.com/introduction-to-qgis.html).
+
+<br>
+
+Set up Mergin Maps with QGIS on your laptop:
+
+  1. Follow the instruction to [sign up for a free mergin account](https://merginmaps.com/docs/setup/sign-up-to-mergin-maps/).
+  
+  2. Make sure you have the latest version of QGIS installed.
+  
+  3. Install the [Mergin Maps plugin](https://merginmaps.com/docs/setup/install-mergin-maps-plugin-for-qgis/).
+  
+  4. We will send you an invitation to join the `newgraph` Mergin workspace.
+  
+
+### View projects in QGIS
+  
+  1. Switch to the `newgraph` workspace in QGIS following [these instructions](https://merginmaps.com/docs/manage/workspaces/#switch-workspaces-in-qgis). Our project will show up in the `Mergin Maps` tab of the `Browser` window.
+  
+```{r mergin-projects, fig.cap = "Viewing New Graph's Mergin projects",eval=T}
+knitr::include_graphics("fig/mapping/mergin_projects.png")
+```
+
+  
+  2. Right click the project name and select `Download`. 
+  
+  3. Save the project somewhere appropriate. For New Graph employees this should be `Projects/gis`.
+  
+  4. Double click or right click to open the project. 
+  
+
+### Common actions in QGIS
+
+Below are some common actions we use in QGIS:
+
+  1. We use `themes` to simplifying viewing projects. You can select a `theme` by clicking the "eye" icon in `Layers` panel. You can also add `themes` following the [instructions here](https://merginmaps.com/docs/gis/setup_themes/#setting-up-qgis-map-themes). 
+  
+```{r themes, fig.cap = "How select themes in QGIS",eval=T}
+knitr::include_graphics("fig/mapping/themes.png")
+```
+  
+  2. Finding a feature such as a culvert, stream, or else anything on the map. Use `Select feature by value`. Then input your search term and select `zoom to feature`, for example, looking for the site with `site_id = 15600301`. 
+  
+```{r find-feature, fig.cap = "How to finding features in QGIS",eval=T}
+knitr::include_graphics("fig/mapping/finding_feature.png")
+knitr::include_graphics("fig/mapping/site_search.png")
+```
+
+  3. Getting information about a feature ("Identify Feature"). Make sure you have the layer selected in the `layer` panel, then select the `Identify Features` tool (top right) and click on the feature you want to know more about. The` Identify Results` panel will appear on the right. 
+
+```{r identify-feature, fig.cap = "How to see feature info in QGIS",eval=T}
+knitr::include_graphics("fig/mapping/identify_feature.png")
+```
+ 
+  4. Copy information from a feature. Select the row then hover your cursor over the text you want to copy then `cmd+c` to copy (on mac).
+
+```{r copy-feature, fig.cap = "How to copy information from a features in QGIS",eval=T}
+knitr::include_graphics("fig/mapping/copy_feature_info.png")
+```
+
+  5. Creating maps with `Projects/print layout`. This is where you can create a map that can be exported as an image or pdf. Below is an example of a map layout. Check out [this video](https://www.youtube.com/watch?v=OlDGEVhpmo0) for how to make maps.
+
+```{r qgis-maps, fig.cap = "How to create and export maps in QGIS",eval=T}
+knitr::include_graphics("fig/mapping/qgis_maps.png")
+```
+  
+
+### Editing a Project
+
+- Sync the project [following these instructions](https://merginmaps.com/docs/manage/synchronisation/#how-to-synchronise-changes-in-mergin-maps) before making any edits to make sure you have the most up to date version of the project. Others may have edited the project since you last opened it.
+
+- Make sure to sync the project [following these instructions](https://merginmaps.com/docs/manage/synchronisation/#how-to-synchronise-changes-in-mergin-maps) after making any edits.
+
+
