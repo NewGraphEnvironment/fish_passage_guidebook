@@ -1,0 +1,78 @@
+# Safety and Equipement
+
+You can find our detailed Health and Safety Plan here https://www.newgraphenvironment.com/hsp/. 
+
+## Field Safety Plans
+
+Field safety plans are written up before traveling to any job site. Information included in these plans include:
+
+- Location and contact info of accommodations where employees are staying.
+- Description of personal and company vehicles.
+- Crew member contact details, including emergency contacts.
+- Personal and crew equipment checklist.
+- Location and contact info of nearest hospital.
+- Check in and failed check in procedures.
+- A brief description of the job, as well as map links and a list of possible locations where crew members will visit.
+
+## Check-in Procedures and Field Communications
+Call, text or in reach emergency contact each morning to share the plan for the day (i.e. name of roads and sites). Agree on a regular daily check in time and report position/provide updates.
+
+## Personal Protective Equipement (PPE)
+
+The following provides a guideline to the requirements and use of PPE. A full listing of requirements can be found in the Occupational Health and Safety Regulation at https://www.worksafebc.com/en/law-policy/occupational-health-safety/searchable-ohs-regulation/ohs-regulation/part-08-personal-protective-clothing-and-equipment
+
+```{r ppe, eval=T}
+readr::read_csv(
+  url(("https://raw.githubusercontent.com/NewGraphEnvironment/new_graphiti/main/assets/data/equipment.csv")
+  )
+)|> 
+  filter(!is.na(eq_pers_standard)) |> 
+  select(eq_item) |> 
+  fpr::fpr_kable(font = 12)
+```
+
+
+
+## Tailboards
+
+Tailboard meetings are a way to reset at the start of new work tasks to put safety first as the top priority at all places of work. Our tailboard template is unique in that it contains documentation of numerous safety policy actions in one place. Tailboards include references to field safety plans and contain:
+
+- Site Assessments, Hazard Identifications and Risk Assessments
+- Worker Assessments
+- Personal Protective Equipment Checklist/Inspections
+- Machinery Inspection (Vehicle/Trailer/ATV)
+- Emergency Contact List and Info
+- Call In/Call Out Numbers for Check-ins
+- Hazard Inspections
+- First Aid Assessments
+
+
+A copy of our tailboard can be found here https://github.com/NewGraphEnvironment/hsp/blob/master/data/form_templates/tailboard_template.pdf.
+
+
+## Equipment 
+
+Ensure you have the required equipment. A detailed list is below. 
+
+
+```{r equipment, eval=T}
+readr::read_csv(
+  url(("https://raw.githubusercontent.com/NewGraphEnvironment/new_graphiti/main/assets/data/equipment.csv")
+  )
+)|> 
+  filter(!is.na(eq_task3)) |> 
+  select(eq_item) |> 
+  fpr::fpr_kable(font = 12)
+```
+
+
+## Fieldwork checklist
+
+Here are somethings to check before heading out into the field:
+
+- Field safety plans complete. 
+- Ensure you have all the correct PPE and equipment for the fieldwork.
+- Charge hand radios.
+- Charge inreach/zoleo.
+- Check the fire information for the study area [here](https://wildfiresituation.nrs.gov.bc.ca/map) 
+
