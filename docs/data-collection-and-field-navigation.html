@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Data Collection and Field Navigation | Fish Passage Guidebook</title>
+  <meta name="description" content="A guidebook to get you set up with New Graph Environment’s fish passage assessment protocols" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Data Collection and Field Navigation | Fish Passage Guidebook" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="A guidebook to get you set up with New Graph Environment’s fish passage assessment protocols" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Data Collection and Field Navigation | Fish Passage Guidebook" />
+  
+  <meta name="twitter:description" content="A guidebook to get you set up with New Graph Environment’s fish passage assessment protocols" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="safety-and-equipment.html"/>
+<link rel="next" href="mapping.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.33/datatables.js"></script>
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="libs/jszip-1.13.6/jszip.min.js"></script>
+<link href="libs/dt-ext-buttons-1.13.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-buttons-1.13.6/js/dataTables.buttons.min.js"></script>
+<script src="libs/dt-ext-buttons-1.13.6/js/buttons.html5.min.js"></script>
+<script src="libs/dt-ext-buttons-1.13.6/js/buttons.colVis.min.js"></script>
+<script src="libs/dt-ext-buttons-1.13.6/js/buttons.print.min.js"></script>
+<link href="libs/dt-ext-fixedcolumns-1.13.6/css/fixedColumns.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-fixedcolumns-1.13.6/js/dataTables.fixedColumns.min.js"></script>
+<link href="libs/dt-ext-colreorder-1.13.6/css/colReorder.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-colreorder-1.13.6/js/dataTables.colReorder.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+<script type="text/javascript">
+
+// toggle visibility of R source blocks in R Markdown output
+function toggle_R() {
+  var x = document.getElementsByClassName('r');
+  if (x.length == 0) return;
+  function toggle_vis(o) {
+    var d = o.style.display;
+    o.style.display = (d == 'block' || d == '') ? 'none':'block';
+  }
+
+  for (i = 0; i < x.length; i++) {
+    var y = x[i];
+    if (y.tagName.toLowerCase() === 'pre') toggle_vis(y);
+  }
+
+    var elem = document.getElementById("myButton1");
+    if (elem.value === "Show/Hide Code") elem.value = "Show/Hide Code";
+    else elem.value = "Show/Hide Code";
+}
+
+document.write('<input onclick="toggle_R();" type="button" value="Show/Hide Code" id="myButton1" style="position: absolute; top: 10%; right: 2%; z-index: 200"></input>')
+
+document.addEventListener('DOMContentLoaded', toggle_R);
+
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MFish Passage Guidebook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Acknowledgement</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="safety-and-equipment.html"><a href="safety-and-equipment.html"><i class="fa fa-check"></i><b>2</b> Safety and Equipment</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="safety-and-equipment.html"><a href="safety-and-equipment.html#field-safety-plans"><i class="fa fa-check"></i><b>2.1</b> Field Safety Plans</a></li>
+<li class="chapter" data-level="2.2" data-path="safety-and-equipment.html"><a href="safety-and-equipment.html#check-in-procedures-and-field-communications"><i class="fa fa-check"></i><b>2.2</b> Check-in Procedures and Field Communications</a></li>
+<li class="chapter" data-level="2.3" data-path="safety-and-equipment.html"><a href="safety-and-equipment.html#safety-gear"><i class="fa fa-check"></i><b>2.3</b> Safety Gear</a></li>
+<li class="chapter" data-level="2.4" data-path="safety-and-equipment.html"><a href="safety-and-equipment.html#tailboards"><i class="fa fa-check"></i><b>2.4</b> Tailboards</a></li>
+<li class="chapter" data-level="2.5" data-path="safety-and-equipment.html"><a href="safety-and-equipment.html#fieldwork-checklist"><i class="fa fa-check"></i><b>2.5</b> Fieldwork checklist</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-collection-and-field-navigation.html"><a href="data-collection-and-field-navigation.html"><i class="fa fa-check"></i><b>3</b> Data Collection and Field Navigation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-collection-and-field-navigation.html"><a href="data-collection-and-field-navigation.html#apps-and-programs-used"><i class="fa fa-check"></i><b>3.1</b> Apps and Programs Used</a></li>
+<li class="chapter" data-level="3.2" data-path="data-collection-and-field-navigation.html"><a href="data-collection-and-field-navigation.html#mergin-maps"><i class="fa fa-check"></i><b>3.2</b> Mergin Maps</a></li>
+<li class="chapter" data-level="3.3" data-path="data-collection-and-field-navigation.html"><a href="data-collection-and-field-navigation.html#fish-passage-assessment-methods"><i class="fa fa-check"></i><b>3.3</b> Fish passage assessment methods</a></li>
+<li class="chapter" data-level="3.4" data-path="data-collection-and-field-navigation.html"><a href="data-collection-and-field-navigation.html#photos"><i class="fa fa-check"></i><b>3.4</b> Photos</a></li>
+<li class="chapter" data-level="3.5" data-path="data-collection-and-field-navigation.html"><a href="data-collection-and-field-navigation.html#phone-and-battery-management"><i class="fa fa-check"></i><b>3.5</b> Phone and battery management</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="mapping.html"><a href="mapping.html"><i class="fa fa-check"></i><b>4</b> Mapping</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="mapping.html"><a href="mapping.html#mergin-maps-on-your-computer"><i class="fa fa-check"></i><b>4.1</b> Mergin Maps on your computer</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="changelog.html"><a href="changelog.html"><i class="fa fa-check"></i>Changelog</a></li>
+<li class="chapter" data-level="" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i>Session Info</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/NewGraphEnvironment/mybookdown-template" target="blank">Scripts and Data</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Fish Passage Guidebook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-collection-and-field-navigation" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Data Collection and Field Navigation<a href="data-collection-and-field-navigation.html#data-collection-and-field-navigation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>When in the field, we use Mergin Maps on our phones to visual the area, but also to add data to the map through digital field forms. This allows us to locate upstream and downstream features such as crossings, barriers, and fish observation. We can also use it to determine the type of surrounding habitat and land use, as well as what type of habitat the stream is modeled as in <a href="https://smnorris.github.io/bcfishpass/">bcfishpass</a><span class="citation">(Norris [2020] 2024)</span>.</p>
+<p><br></p>
+<p><a href="https://merginmaps.com/">Mergin Maps</a> is a geodata platform that allows us to collaborate with others by collecting data in the field and syncing to a shared QGIS project <span class="citation">(MerginMaps 2023)</span>. Check out the <a href="https://merginmaps.com/docs/">Mergin Maps documentation</a> for more information.</p>
+<div id="apps-and-programs-used" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Apps and Programs Used<a href="data-collection-and-field-navigation.html#apps-and-programs-used" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><a href="http://www.timestampcamera.com/">Timestamp Camera</a> is used to take photos (landscape only) in the field. Ensure the current date and time and UTM coordinates are in top right corner using the settings below.</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-collection-and-field-navigation.html#cb6-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/fieldwork/timestamp.png&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:timestamp"></span>
+<img src="fig/fieldwork/timestamp.png" alt="Timestamp settings" width="100%" />
+<p class="caption">
+Figure 3.1: Timestamp settings
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><p><a href="https://store.avenza.com/">Avenza Maps</a> is key for loading georeferenced pdf field maps from <a href="https://hillcrestgeo.ca/outgoing/fishpassage/projects/" class="uri">https://hillcrestgeo.ca/outgoing/fishpassage/projects/</a>. We also add <code>kml</code> files of our target sites (taken from safety plans) to <code>Avenza</code> to make navigation easy. The paid version is necessary to load many maps at the same time for big projects.</p></li>
+<li><p><a href="https://www.dropbox.com/">Dropbox</a> is used for bulk uploads to <code>Avenza.</code></p></li>
+<li><p><a href="https://www.garmin.com/en-CA/software/basecamp/">Garmin BaseCamp</a> is used to move <code>gpx</code> files in and out of our gps. We export tracks out of <code>Basemap</code> with the track names unchanged and we name the <code>gpx</code> files informatively (see screenshot below for example). <strong>Note: The gps units have a little $150 micro sd card behind the batteries that can come loose, this chip is key to knowing where we are going. Be careful when changing batteries.</strong></p></li>
+</ol>
+</div>
+<div id="mergin-maps" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Mergin Maps<a href="data-collection-and-field-navigation.html#mergin-maps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mergin is handy because we don’t need wifi or cell service to view the maps. You don’t need to have the project downloaded on your laptops to see/use them on your phone, you just need to have a Mergin account with access to the <code>newgraph</code> workspace.</p>
+<div id="set-up" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Set up<a href="data-collection-and-field-navigation.html#set-up" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Set up Mergin Maps on your phone. This must be done with wifi or while in cell range (not offline):</p>
+<ol style="list-style-type: decimal">
+<li>Download the Mergin Maps app from the App Store (Apple) or Google Play (Android) following the <a href="https://merginmaps.com/docs/setup/install-mobile-app/">instructions here</a>. You don’t need to have the project on your laptops to see/use on your phone.</li>
+<li>Sign up for a “free trial” account. We suggest a username with no spaces (or special characters like %$&amp;) such as “mwmt_isharpe” as it tells us a lot just by the name. If you have already made a username for github and it has no spaces or special characters perhaps you just want to use that one. Sign in if you have an existing account.</li>
+<li>It will require you to make a trial workspace, once this is complete you will be able to access the <code>newgraph</code> workspace at no cost (even beyond the free trial period).</li>
+<li>We will send you an invitation to join the <code>newgraph</code> Mergin workspace.</li>
+<li>Switch to the <code>newgraph</code> workspace following <a href="https://merginmaps.com/docs/manage/workspaces/#how-to-switch-between-workspaces">these instructions</a>.</li>
+</ol>
+</div>
+<div id="using-mergin-on-your-mobile-device" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Using Mergin on your mobile device<a href="data-collection-and-field-navigation.html#using-mergin-on-your-mobile-device" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Mergin is great because we can use it in the field without wifi or cell service. However, there are some actions that require internet connection and cannot be done offline, such as switching accounts, downloading projects from the cloud, synchronising changes to the cloud, or displaying online background maps. Use the following instructions to <strong>download your projects before you head out into the field!</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Navigate to the Projects tab following the <a href="https://merginmaps.com/docs/field/mobile-app-ui/#projects">instructions here</a>.</p></li>
+<li><p>Download the project you want to view. You will need at least 2GB of storage on your phone to download a project. Once downloaded, tap the project name to open.</p></li>
+<li><p><a href="https://merginmaps.com/docs/field/mobile-app-ui/#more-options-zoom-to-project-map-themes-position-tracking-local-changes-settings">View the different themes</a> available.</p></li>
+<li><p><a href="https://merginmaps.com/docs/field/mobile-app-ui/#layers">View the available layers</a>. You will only see one layer visible, <code>bcfishpass Mobile</code>, which contains all our layers grouped into categories. Click <code>bcfishpass Mobile</code> to view the categories, such as <code>Crossings</code>, <code>Forms</code>, <code>Project Specific</code>. Some category contains sub-categories, so have a look around to see all the available layers. Toggle a layer to turn it on of off on the map.
+For example, if I want to make the <code>streams_st</code> layer visible, I would navigate through <code>bcfishpass Mobile</code> → <code>Streams</code> → <code>Habitat models</code>→ <code>streams_st</code> to toggle on <code>streams_st</code>.</p></li>
+<li><p>Know how to <a href="https://merginmaps.com/docs/field/mobile-app-ui/#more-options-zoom-to-project-map-themes-position-tracking-local-changes-setting">exit</a> a Project.</p></li>
+</ol>
+</div>
+<div id="field-data-entry-into-mergin" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Field Data Entry into Mergin<a href="data-collection-and-field-navigation.html#field-data-entry-into-mergin" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We have digital field forms through Mergin Maps that allow you to add features and data to the map while in the field. Most of the time we don’t have service, so we just save our Projects often and then once back in service we sync with the cloud. Follow the instructions below to add a feature (site) to the project map:</p>
+<ol style="list-style-type: decimal">
+<li>Follow the <a href="https://merginmaps.com/docs/field/mobile-app-ui/#add">instructions add a feature</a>.</li>
+<li>Ensure you are adding the feature to the correct layer, most likely <code>Form PSCIS</code> or <code>Form FISS Site</code>. Then tap <code>record</code> at the bottom of the screen.</li>
+<li>Next, a form will appear and you can enter the data. The form is divided into sections which you can see at the top of the screen. Navigate through each section to enter data.</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-collection-and-field-navigation.html#cb7-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/mapping/features_mobile.PNG&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:features-mobile"></span>
+<img src="fig/mapping/features_mobile.PNG" alt="Features form is divided into sections at the top of the screen" width="100%" />
+<p class="caption">
+Figure 3.2: Features form is divided into sections at the top of the screen
+</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Save the forms as often as possible so if it glitches or fails you don’t lose your work.</p></li>
+<li><p>When you are no longer offline, <strong>make sure to <a href="https://merginmaps.com/docs/field/mobile-app-ui/#sync">sync</a> your changes!</strong></p></li>
+</ol>
+<p><br></p>
+<p>When adding features (sites) to the project map, here are some things to take note of:</p>
+<ul>
+<li><p>We find that Mergin works much better (faster rendering) with <em>airplane</em> mode on.</p></li>
+<li><p>In addition to using the digital field forms (see above section), <strong>make sure to fill out the paper copies as well</strong> because over the last year we have seen uncommon issues with syncing and data corruption.</p></li>
+<li><p>Switching between themes can be very useful for seeing different levels of detail in the field. Some of the commong themes we use are: ADD COMMON THEMESE!!</p></li>
+<li><p>The <code>site_id</code> is important:</p>
+<ul>
+<li><p>If a site has a <code>PSCIS ID</code> then that is used as the identifier.</p></li>
+<li><p>If there is no <code>PSCIS ID</code> we use the “Crossing - Modelled ID” (a.k.a “My Crossing Reference”) as the “Modelled ID”. If there is neither (rare but usually occurs when a stream is not mapped) we use a numeric ID based on the date (YYYYMMDD01 - example 2023070502 - would be our second assessment for today).</p></li>
+</ul></li>
+<li><p>If there is an associated<code>chris_culvert_id</code> (“MoTi” identifier) we include that as well.</p></li>
+</ul>
+</div>
+</div>
+<div id="fish-passage-assessment-methods" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Fish passage assessment methods<a href="data-collection-and-field-navigation.html#fish-passage-assessment-methods" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the field, crossings are assessed for fish passage following the procedures outlined in “Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures” <span class="citation">(BC Ministry of Environment 2011)</span>. All data should be entered using the digital field forms in Mergin Maps. Please see <a href="data-collection-and-field-navigation.html#field-data-entry-into-mergin">Field Data Entry into Mergin</a> for how to enter data into Mergin.</p>
+<p>Photos are taken at surveyed crossings and when possible included images of the road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing and any other relevant features, in that order. See <a href="data-collection-and-field-navigation.html#photos">Photos</a> for how to take proper photos.</p>
+<p>The following information should be recorded and entered into Mergin Maps for all surveyed crossings. The list below is an example of what information is included in the digital field forms in Mergin:</p>
+<ul>
+<li>date of inspection</li>
+<li>crossing reference</li>
+<li>crew member initials</li>
+<li>Universal Transverse Mercator (UTM) coordinates</li>
+<li>stream name</li>
+<li>road name and kilometer</li>
+<li>road tenure information</li>
+<li>crossing type</li>
+<li>crossing subtype</li>
+<li>culvert diameter or span for OBS (Open Bottom Structure)</li>
+<li>culvert length or width for OBS</li>
+</ul>
+<p>A more detailed “full assessment” should be completed for all closed bottom structures and included the following parameters:</p>
+<ul>
+<li>presence/absence of continuous culvert embedment (yes/no)</li>
+<li>average depth of embedment</li>
+<li>whether or not the culvert bed resembled the native stream bed</li>
+<li>presence of and percentage backwatering</li>
+<li>fill depth</li>
+<li>outlet drop<br />
+</li>
+<li>outlet pool depth</li>
+<li>inlet drop</li>
+<li>culvert slope</li>
+<li>average downstream channel width</li>
+<li>stream slope</li>
+<li>presence/absence of beaver activity</li>
+<li>presence/absence of fish at time of survey</li>
+<li>type of valley fill</li>
+<li>habitat value rating</li>
+</ul>
+<p>Habitat value ratings are based on channel morphology, flow characteristics (perennial, intermittent, ephemeral), fish migration patterns, the presence/absence of deep pools, un-embedded boulders, substrate, woody debris, undercut banks, aquatic vegetation and overhanging riparian vegetation (Table <a href="data-collection-and-field-navigation.html#tab:tab-hab-value">3.1</a>).</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-collection-and-field-navigation.html#cb8-1" tabindex="-1"></a>fpr_table_habvalue <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="data-collection-and-field-navigation.html#cb8-2" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">&#39;Habitat value criteria (Fish Passage Technical Working Group, 2011).&#39;</span>, <span class="at">booktabs =</span> T) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="data-collection-and-field-navigation.html#cb8-3" tabindex="-1"></a>    kableExtra<span class="sc">::</span><span class="fu">column_spec</span>(<span class="at">column =</span> <span class="dv">1</span>, <span class="at">width_min =</span> <span class="st">&#39;1.5in&#39;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4"><a href="data-collection-and-field-navigation.html#cb8-4" tabindex="-1"></a>    kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="fu">c</span>(<span class="st">&quot;condensed&quot;</span>), <span class="at">full_width =</span> T, <span class="at">font_size =</span> font_set) </span></code></pre></div>
+<table class="table table-condensed" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:tab-hab-value">Table 3.1: </span><span id="tab:tab-hab-value">Table 3.2: </span>Habitat value criteria (Fish Passage Technical Working Group, 2011).
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Habitat Value
+</th>
+<th style="text-align:left;">
+Fish Habitat Criteria
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;min-width: 1.5in; ">
+High
+</td>
+<td style="text-align:left;">
+The presence of high value spawning or rearing habitat (e.g., locations with abundance of suitably sized gravels, deep pools, undercut banks, or stable debris) which are critical to the fish population.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.5in; ">
+Medium
+</td>
+<td style="text-align:left;">
+Important migration corridor. Presence of suitable spawning habitat. Habitat with moderate rearing potential for the fish species present.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;min-width: 1.5in; ">
+Low
+</td>
+<td style="text-align:left;">
+No suitable spawning habitat, and habitat with low rearing potential (e.g., locations without deep pools, undercut banks, or stable debris, and with little or no suitably sized spawning gravels for the fish species present).
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="photos" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Photos<a href="data-collection-and-field-navigation.html#photos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Taking proper photos is important for visualizing the site, data QA, and the quality of our report. See the <a href="data-collection-and-field-navigation.html#apps-and-programs-used">Apps and Programs Used</a> sections to download the TimeStamp app. Below are some tips for taking proper photos:</p>
+<ul>
+<li>Use the TimeStamp app</li>
+<li>Ensure the current time and UTM coordinates in top right corner, see settings in <a href="data-collection-and-field-navigation.html#apps-and-programs-used">Apps and Programs Used</a> for how to set this up. See photo below for proper coordinates.</li>
+<li>Orient camera landscape when taking photos.</li>
+<li>The first photo you take should always be of the road with the <code>site_id</code> on the site card visible in the corner (or a photo of site card filled in with site name, date, stream name) so that it is easy/possible to know which photos come from where.</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-collection-and-field-navigation.html#cb9-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/fieldwork/road_photo.png&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:road-photo"></span>
+<img src="fig/fieldwork/road_photo.png" alt="The first photo should always of the road with the `site_id` on the site card visible in the corner" width="100%" />
+<p class="caption">
+Figure 3.3: The first photo should always of the road with the <code>site_id</code> on the site card visible in the corner
+</p>
+</div>
+<ul>
+<li>It is important to let the App “find” where you are before taking the first photos at a new site. It can take a few seconds for the app to zoom into the location where you are standing once it is opened.</li>
+<li>Closing the app every time you use it will help your phone battery not drain.</li>
+</ul>
+</div>
+<div id="phone-and-battery-management" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Phone and battery management<a href="data-collection-and-field-navigation.html#phone-and-battery-management" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Your phone needs to be mounted on a secure mount on the dash of your vehicle so you can see the phone while driving.</li>
+<li>Always plug in your phone when driving so it can charge.</li>
+<li>Always carry an external battery pack so that you can charge your phone if it dies.</li>
+<li>Ensure your phone is in a quality case.</li>
+</ul>
+<p>Need some sort of cloud backup so that photos sync to the cloud each night. they are on phone AND in mergin. At end of day take photos in order of all field pages</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="safety-and-equipment.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mapping.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["fish_passage_guidebook.pdf", "fish_passage_guidebook.html"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
