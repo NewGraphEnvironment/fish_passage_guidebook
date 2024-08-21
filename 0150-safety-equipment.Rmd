@@ -4,7 +4,7 @@ Learning and evolving a safety program couldn't be more important. We need to do
 
 ## Field Safety Plans
 
-Field safety plans are written up before traveling to any job site. An example of a somewhat recent plan can be foudn here http://www.newgraphenvironment.com/safety_plan_skeena_2023/ .  Information included in these plans include
+Field safety plans are written up before traveling to any job site. An example of a somewhat recent plan can be found here http://www.newgraphenvironment.com/safety_plan_skeena_2023/ .  Information included in these plans include:
 
 - Check in and failed check in procedures. Who is watching our back and what communications need to happen for us to be considered safe.  If those communications don't happen what does the "back watcher" do about it!
 - Location and contact info of field crew and check in person (including emergency contacts) as well as the accommodations where everyone is staying (as a back up to follow up if direct communications break down).
@@ -14,6 +14,7 @@ Field safety plans are written up before traveling to any job site. An example o
 - A brief description of the job, as well as map links and a list of possible locations where crew members will visit.
 
 ## Check-in Procedures and Field Communications
+
 Call, text or in reach emergency contact each morning to share the plan for the day (i.e. name of roads and sites). Agree on a regular daily check in time and report position/provide updates. Agree on a final time that people need to check in by and what happens if they don't.  Often we group text to our check in person before we leave accommodations in the morning with our general pla.  Example below:
 
 1. 8:00 am -  "we are working up Morice-Owen FSR all day (electrofgishing and habitat confirmation walks) and will be without cell. This are is west of Houston.  We will check in early afternoon with the satellite communicator."). 
@@ -23,7 +24,7 @@ Call, text or in reach emergency contact each morning to share the plan for the 
 
 ## Safety Gear
 
-The following provides a list of safety gear that we commonly carry as well as key equipment that is part of our standard field equipment for fish passage work (ie. fish passage assessments, fish habitat confirmations, follow up monitoring, electrofishing, drone surveys, etc.).
+The following provides a list of safety gear that we commonly carry as well as key equipment that is part of our standard field equipment for fish passage work (ie. fish passage assessments, fish habitat confirmations, follow up monitoring, electrofishing, drone surveys, etc.). This table can be filtered and exported for your own use. 
 
 ```{r ppe, eval=T}
 readr::read_csv(
@@ -34,8 +35,10 @@ readr::read_csv(
   select(eq_item:eq_task3) |> 
   # remove "all" for now
   select(-eq_task1) |> 
-  # still need to replace all values with x (one liner with dplyr funciton i believe)
+  # rename
   purrr::set_names(c("item", "personal_standard", "truck", "safety", "electrofishing", "fish_passage")) |>
+  # still need to replace all values with x (one liner with dplyr function i believe)
+  mutate(across(where(is.character) & !item, ~ ifelse(. != "", "x", .))) |> 
   my_dt_table(cols_freeze_left = 0)
 ```
 
@@ -60,8 +63,22 @@ A copy of our tailboard can be found here https://github.com/NewGraphEnvironment
 - First Aid Assessments
 
 
+## Emergency responce plans
 
+Similar to how we make a field safety plan for each job site, we also make an emergency response plan so that all crew members and staff know what to do in case of an emergency. It important that everyone has reviewed this plan and knows where it is stored in case it needs to be reviewed. 
 
+Our emergency plan template can be found here https://github.com/NewGraphEnvironment/hsp/blob/master/data/form_templates/ERP_template.pdf. 
+
+Information included in these plans include:
+
+- Names and contacts for all crew members
+- Emergency contacts
+- Location of nearest hostpital
+- Evacuation assembly location
+- Evacuation route
+- Location of fire extinguisher and spill kit
+- Procedures for fire response, natural disasters, spills, and injuries
+- Remote site emergency call-in procedures
 
 ## Fieldwork checklist
 
@@ -72,4 +89,5 @@ Here are somethings to check before heading out into the field:
 - Charge hand radios.
 - Charge inreach/zoleo.
 - Check the fire information for the study area [here](https://wildfiresituation.nrs.gov.bc.ca/map) 
+- Ensure your vehicle is in safe working condition.
 
