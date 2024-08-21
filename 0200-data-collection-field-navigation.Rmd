@@ -11,8 +11,20 @@ When in the field, we use Mergin Maps on our phones to visual the area, but also
 
 1. [Timestamp Camera](http://www.timestampcamera.com/) is used to take photos (landscape only) in the field. Ensure the current date and time and UTM coordinates are in top right corner using the settings below. 
 
+```{r timestamp, fig.cap = "Navigate to the Timestamp settings by pressing the "clock" icon in the bottom right corner",eval=T}
+
+# fpr::fpr_photo_resize_convert(photo = "/Users/lucyschick/Projects/repo/fish_passage_guidebook/fig/fieldwork/timestamp_settings_access.jpg", path = "/Users/lucyschick/Projects/repo/fish_passage_guidebook/fig/fieldwork/timestamp_settings_access.jpg")
+
+knitr::include_graphics("fig/fieldwork/timestamp_settings_access.jpg")
+
+```
+
 ```{r timestamp, fig.cap = "Timestamp settings",eval=T}
-knitr::include_graphics("fig/fieldwork/timestamp.png")
+
+# fpr::fpr_photo_resize_convert(photo = "/Users/lucyschick/Projects/repo/fish_passage_guidebook/fig/fieldwork/timestamp_settings.jpg", path = "/Users/lucyschick/Projects/repo/fish_passage_guidebook/fig/fieldwork/timestamp_settings.jpg")
+
+knitr::include_graphics("fig/fieldwork/timestamp_settings.jpg")
+
 ```
 
 2. [Avenza Maps](https://store.avenza.com/) is key for loading georeferenced pdf field maps from <https://hillcrestgeo.ca/outgoing/fishpassage/projects/>. We also add `kml` files of our target sites (taken from safety plans) to `Avenza` to make navigation easy. The paid version is necessary to load many maps at the same time for big projects.
@@ -86,7 +98,7 @@ When adding features (sites) to the project map, here are some things to take no
   
 ## Fish passage assessment methods
 
-In the field, crossings are assessed for fish passage following the procedures outlined in “Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures” [@fish_passage_assessments]. All data should be entered using the digital field forms in Mergin Maps. Please see [Field Data Entry into Mergin] for how to enter data into Mergin. 
+In the field, crossings are assessed for fish passage following the procedures outlined in [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures]() [@fish_passage_assessments]. All data should be entered using the digital field forms in Mergin Maps. Please see [Field Data Entry into Mergin] for how to enter data into Mergin. 
 
 Photos are taken at surveyed crossings and when possible included images of the road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing and any other relevant features, in that order. See [Photos] for how to take proper photos.
 
