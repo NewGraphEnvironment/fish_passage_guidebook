@@ -1,51 +1,43 @@
 # Data Collection and Field Navigation
 
-When in the field, we use Mergin Maps on our phones to visual the area, but also to add data to the map through digital field forms. This allows us to locate upstream and downstream features such as crossings, barriers, and fish observation. We can also use it to determine the type of surrounding habitat and land use, as well as what type of habitat the stream is modeled as in [bcfishpass](https://smnorris.github.io/bcfishpass/) [@norris2024smnorrisbcfishpass]. 
+## Fish passage assessment methods
+In the field, crossings are assessed for fish passage following the procedures outlined in [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]. There is a link to these methods in the digital field form so you can easily access them while in the field if you have cell service. There is a field form
+for this work that can and should be used to collect data in the field as well. As our digital field data collection system is still in development, we are currently minimally populating a paper form as well as the digital form.  We collect more detailed comments and other information on the digital field forms but still rapidly fill out a paper form to ensure we have the data in case of a digital failure.
 
 <br>
 
-[Mergin Maps](https://merginmaps.com/) is a geodata platform that allows us to collaborate with others by collecting data in the field and syncing to a shared QGIS project [@merginmaps2023mergin]. Check out the [Mergin Maps documentation](https://merginmaps.com/docs/) for more information.
-
-
-## Apps and Programs Used
-
-1. [Timestamp Camera](http://www.timestampcamera.com/) is used to take photos (landscape only) in the field. Ensure the current date and time and UTM coordinates are in top right corner using the settings below. 
-
-```{r timestamp-settings-access, fig.cap = "Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner", out.width='50%', eval=T}
-
-knitr::include_graphics("fig/fieldwork/timestamp_settings_access.jpg")
-
+```{r methods-mobile, fig.cap = "The methods used for fish passage assessments can be found in the 'Form PSCIS' under 'Methods'", out.width='50%', eval=T}
+knitr::include_graphics("fig/fieldwork/methods_mobile.jpg")
 ```
 
-```{r timestamp-settings, fig.cap = "Proper Timestamp settings", out.width='50%', eval=T}
-
-knitr::include_graphics("fig/fieldwork/timestamp_settings.jpg")
-```
-
-2. [Avenza Maps](https://store.avenza.com/) is key for loading georeferenced pdf field maps from <https://hillcrestgeo.ca/outgoing/fishpassage/projects/>. We also add `kml` files of our target sites (taken from safety plans) to `Avenza` to make navigation easy. The paid version is necessary to load many maps at the same time for big projects.
-
-3. [Dropbox](https://www.dropbox.com/) is used for bulk uploads to `Avenza.`
-
-4. [Garmin BaseCamp](https://www.garmin.com/en-CA/software/basecamp/) is used to move `gpx` files in and out of our gps. We export tracks out of `Basemap` with the track names unchanged and we name the `gpx` files informatively (see screenshot below for example). **Note: The gps units have a little \$150 micro sd card behind the batteries that can come loose, this chip is key to knowing where we are going. Be careful when changing batteries.**
 
 ## Mergin Maps 
 
-Mergin is handy because we don't need wifi or cell service to view the maps. You don’t need to have the project downloaded on your laptops to see/use them on your phone, you just need to have a Mergin account with access to the `newgraph` workspace.
+[Mergin Maps](https://merginmaps.com/) is a geodata platform that allows us to collaborate with others by collecting data in the field and syncing to a shared QGIS project [@merginmaps2023mergin]. Check out the [Mergin Maps documentation](https://merginmaps.com/docs/) for more information.
+
+<br>
+
+
+We use Mergin Maps on our phones to locate sites, understand watershed/land values and collect data through digital field forms (adapted versions of the [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]. 
+
+<br>
+
+Once downloaded to a phone - wifi or cell service is not required to view maps and collect data. Also of note - it is not required to have the project downloaded on a laptop to see/use them on the phone - only a Mergin account with access to the `newgraph` workspace is necessary.
 
 ### Set up
 
-Set up Mergin Maps on your phone. This must be done with wifi or while in cell range (not offline):
+Setting up Mergin Maps on a phone requires a wifi or cell connection:
 
-  1. Download the Mergin Maps app from the App Store (Apple) or Google Play (Android) following the [instructions here](https://merginmaps.com/docs/setup/install-mobile-app/). You don’t need to have the project on your laptops to see/use on your phone.
+  1. Download the Mergin Maps app from the App Store (Apple) or Google Play (Android) following the [instructions here](https://merginmaps.com/docs/setup/install-mobile-app/). 
   2. Sign up for a "free trial" account. We suggest a username with no spaces (or special characters like %$&) such as "mwmt_isharpe" as it tells us a lot just by the name. If you have already made a username for github and it has no spaces or special characters perhaps you just want to use that one. Sign in if you have an existing account.
-  3. It will require you to make a trial workspace, once this is complete you will be able to access the `newgraph` workspace at no cost (even beyond the free trial period).
-  4. We will send you an invitation to join the `newgraph` Mergin workspace.
+  3. It will require you to make a FREE trial workspace. Once this is complete you will be able to access the `newgraph` workspace at no cost (even beyond the end of the free trial period).
+  4. We will receive an invitation to join the `newgraph` Mergin workspace.
   5. Switch to the `newgraph` workspace following [these instructions](https://merginmaps.com/docs/manage/workspaces/#how-to-switch-between-workspaces).
   
 
-### Using Mergin on your mobile device
+### Using Mergin on a mobile device
 
-Mergin is great because we can use it in the field without wifi or cell service. However, there are some actions that require internet connection and cannot be done offline, such as switching accounts, downloading projects from the cloud, synchronising changes to the cloud, or displaying online background maps. Use the following instructions to **download your projects before you head out into the field!**
+Although use in the field does not require wifi or cell service, there are actions that require an internet connection such as switching accounts, downloading projects from the cloud, synchronising changes to the cloud, and displaying online background maps (ex. google imagery). Use the following instructions to **download your projects before you head out into the field!**
 
 
   1. Navigate to the Projects tab following the [instructions here](https://merginmaps.com/docs/field/mobile-app-ui/#projects).
@@ -58,135 +50,66 @@ Mergin is great because we can use it in the field without wifi or cell service.
 
 
 ### Field Data Entry into Mergin
-  
+Follow the [instructions to add a feature to a specific layer](https://merginmaps.com/docs/field/mobile-app-ui/#add) and the
+guidance below to add fish passage assessment data to the project:
 
-We have digital field forms through Mergin Maps that allow you to add features (sites) and data to the map while in the field. 
-
-Always collect the all the information, including the photos, so that we have what we need. If you don't collect some information then write in the assessment comments why it is missing. For example, if you cannot see the inlet of the culvert, take a picture of what you can see and upload it to Mergin then explain in the assessment comments that the inlet was not visible. Same with fields you are not sure of, fill everything out and put details in the assessment comments of what is going on. It's important that the photos uploaded be different, using the same photo for more than one section (Ex: Upstream photo and Inlet Photo) creates data management issues.
-
-Follow the instructions below to add a feature (site) to the project map:
-
-  1. Follow the [instructions to add a feature to a specific layer](https://merginmaps.com/docs/field/mobile-app-ui/#add).
-  2. Ensure you are adding the feature to the correct layer, most likely `Form PSCIS`. Then tap `record` at the bottom of the screen.
-  3. Next, a form will appear and you can enter the data. The form is divided into sections which you can see at the top of the screen. The `Stream` and `Climate` sections will only become visible if you have selected `closed bottom structure` for the  `crossing type` because only closed bottom structures require that information. Navigate through each section to enter data.
+  1. Ensure you are at the location of the culvert before adding the feature to `Form PSCIS`. 
+  2. Tap `record` at the bottom of the screen.
+  3. Once the form appears you can enter the data. The form is divided into sections which you can see at the top of the screen. The `Stream` and `Climate` sections will only become visible if you have selected `closed bottom structure` for the  `crossing type` because only closed bottom structures require that information. Navigate through each section to enter data.
   4. Click the green check mark in the top right corner to save the feature.
  
 ```{r sections-mobile, fig.cap = "The `Stream` and `Climate` sections will only become visible if you have selected `closed bottom structure` for the  `crossing type` ", out.width='50%', eval=T}
 knitr::include_graphics("fig/fieldwork/more_sections.jpg")
 ```
 
-  5. Save the forms as often as possible so if it glitches or fails you don't lose your work.
+  5. While entering information save the form often as glitches can occur which can lead to loosing work.
   
-  6. When you are no longer offline, **[make sure to sync](https://merginmaps.com/docs/field/mobile-app-ui/#sync) your changes!**
+  6. When you are no longer offline, **[make sure to sync](https://merginmaps.com/docs/field/mobile-app-ui/#sync) your changes!** to the online shared project.
 
-<br>
 
 When adding features (sites) to the project map, here are some things to take note of:
 
   - We find that Mergin works much better (faster rendering) with *airplane* mode on. 
   
-  - In addition to using the digital field forms (see above section), **make sure to fill out the paper copies as well** because over the last year we have seen uncommon issues with syncing and data corruption.
+  - In addition to using the digital field forms (see above section), **make sure to fill out the paper copies as well** as in the past we have seen uncommon issues with syncing and data corruption.
   
   - Switching between themes can be very useful for seeing different levels of detail in the field. Some of the common themes we use are: ADD COMMON THEMES!!
 
   - The `site_id` is important:
     - If a site has a `PSCIS ID` then that is used as the identifier. 
     
-    - If there is no `PSCIS ID` we use the "Crossing - Modelled ID" (a.k.a "My Crossing Reference") as the "Modelled ID". If there is neither (rare but usually occurs when a stream is not mapped) we use a numeric ID based on the date (YYYYMMDD01 - example 2023070502 - would be our second assessment for today).
+    - If there is no `PSCIS ID` we use the "Crossing - Modelled ID" (a.k.a "My Crossing Reference") as the "Modelled ID". If there is neither (rare but usually occurs when a stream is not mapped) we use a numeric ID based on the date (YYYYMMDD01 - example 2023070502 - would be our second assessment for the day).
   
   - If there is an associated` chris_culvert_id` ("MoTi" identifier) we include that as well.
   
-## Fish passage assessment methods
-
-In the field, crossings are assessed for fish passage following the procedures outlined in [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]. There is a link to these methods in the digital field form so you can easily access them while in the field if you have cell service. 
-
-```{r methods-mobile, fig.cap = "The methods used for fish passage assessments can be found in the digital field form under 'Methods'", out.width='50%', eval=T}
-knitr::include_graphics("fig/fieldwork/methods_mobile.jpg")
-```
-
-<br>
-
-### Digital field forms
-
-All data should be entered using the digital field forms in Mergin Maps. Please see [Field Data Entry into Mergin] for how to enter data into Mergin. 
-
-The list below is an example of what information is included in the `Form PSCIS` digital field form in Mergin:
-
-  - date of inspection
-  - crossing reference 
-  - crew member initials
-  - Universal Transverse Mercator (UTM) coordinates
-  - stream name
-  - road name and kilometer
-  - road tenure information
-  - crossing type
-  - crossing subtype
-  - culvert diameter or span for OBS (Open Bottom Structure)
-  - culvert length or width for OBS
-
-A more detailed “full assessment” should be completed for all **closed bottom structures** (open bottom structures such as bridges and fords do not rquire at much information). Once you select `closed bottom structure` for the  `crossing type` in the `Crossing` section, you will see 2 new sections appear, `Stream` and `Climate` which include the following parameters (Figure \@ref(fig:sections-mobile):
-
-  - presence/absence of continuous culvert embedment (yes/no) 
-  - average depth of embedment 
-  - whether or not the culvert bed resembled the native stream bed 
-  - presence of and percentage backwatering 
-  - fill depth 
-  - outlet drop  
-  - outlet pool depth
-  - inlet drop
-  - culvert slope 
-  - average downstream channel width 
-  - stream slope 
-  - presence/absence of beaver activity 
-  - presence/absence of fish at time of survey
-  - type of valley fill 
-  - habitat value rating  
-
-Habitat value ratings are based on channel morphology, flow characteristics (perennial, intermittent, ephemeral), fish migration patterns, the presence/absence of deep pools, un-embedded boulders, substrate, woody debris, undercut banks, aquatic vegetation and overhanging riparian vegetation (Table \@ref(tab:tab-hab-value)).
-
-```{r tab-hab-value}
-fpr_table_habvalue %>% 
-  knitr::kable(caption = 'Habitat value criteria (Fish Passage Technical Working Group, 2011).', booktabs = T) %>% 
-    kableExtra::column_spec(column = 1, width_min = '1.5in') %>% 
-    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = font_set) 
   
-```
+Always collect the all the information, including the photos, so that we have what we need. If you don't collect some information then write in the assessment comments why it is missing. For example, if you cannot see the inlet of the culvert, take a picture of what you can see and upload it to Mergin then explain in the assessment comments that the inlet was not visible. Same with fields you are not sure of, fill everything out and put details in the assessment comments of what is going on. It's important that each of the photos uploaded be different, using the same photo for more than one section (ex. Outlet photo and Barrel Photo) creates data management issues.
+  
+### Assessment Comments
 
+It's important to write detailed comments in the `Assessment Comments" section of the form. Comments should include everything that will helps characterize the site and justify the habitat ratings given by the surveyor. Some example are:
 
-### Comments
-
-It's important to write detailed comments because this will help us understand what was going on at the site when we are back in the office. Comments should include anything that will help us paint a good picture of the crossing. Some example are:
-
+- justification for habitat value rating (ex. good flow and some gravels present)
 - the condition of the culvert/crossing
 - observations of riparian health or deterioration and potential causes (cattle, erosion, stream velocity, etc)
-- if fish were observed 
-- the location of the crossing if it was incorrectly mapped
-- reasons for missing photos
+- Size, number and species (if known) of fish observed 
+- location of the crossing if it was incorrectly mapped
+- reasons for photos taken are not ideal (ex. water too high to see the inlet so it is not clear in the photo)
 
   
 ### Photos
 
-Taking proper photos is important for visualizing the site, data QA, and the quality of our report. It's really important to have the correct location and time information included in the photo because this allows us to determine which site the photo came from if it gets lost somewhere. 
+Photos are one of the most important pieces of data we collect wiht the majority of which loaded to our digital field forms. The [Timestamp Camera app](http://www.timestampcamera.com/) is used to take photos (landscape only) in the field. Ensure the current date and time and UTM coordinates are in top right corner using the settings in Figure \@ref(fig:timestamp-settings), take the photos on the camera first - then load to the field form after (for backup).
 
-See the [Apps and Programs Used] sections for how to download the TimeStamp app and set up the correct location and time settings. 
 
-Below are some tips for taking proper photos:
-
-  - Use the TimeStamp app
-  - Ensure the current time and UTM coordinates in top right corner, see settings in [Apps and Programs Used] for how to set this up. See photo below for an example of what a proper photo should look like. 
-  - Orient camera landscape when taking photos.
-  - The first photo you take should always be of the road with the `site_id` on the site card visible in the corner (or a photo of site card filled in with site name, date, stream name) so that it is easy/possible to know where the photos came from.
-
-```{r road-photo, fig.cap = "The first photo should always of the road with the `site_id` on the site card visible in the corner",eval=T}
-knitr::include_graphics("fig/fieldwork/road_photo.png")
+```{r timestamp-settings, fig.cap = "Left: Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner. Right: Timestamp UTM and time display settings.", fig.show="hold", out.width= c("49.5%","1%","49.5%"), }
+knitr::include_graphics("fig/fieldwork/timestamp_settings_access.jpg")
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics("fig/fieldwork/timestamp_settings.JPG")
 ```
-  
-  - It is important to let the App “find” where you are before taking the first photos at a new site.  It can take a few seconds for the app to zoom into the location where you are standing once it is opened.
-  - Closing the app every time you use it will help your phone battery not drain.
 
-<br>
-
-Photos are taken at surveyed crossings and when possible include images of the **road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing** and any other relevant features. These photos should be added to the digital field form in the photos section following the instructions below:
+Photos are taken at surveyed crossings and all SIX of the following images are always required: **road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing**. These photos should be taken on the camera first
+then added to the digital field form in the photos sections following the instructions below:
 
   1. Take photos following the tips above
   2. Navigate to the `Photos` section of the digital field form
@@ -199,10 +122,27 @@ Photos are taken at surveyed crossings and when possible include images of the *
 knitr::include_graphics("fig/fieldwork/photos_mobile.jpg")
 ```
 
+Below are some tips for taking proper photos:
+
+  - Use the TimeStamp app
+  - Ensure the current time and UTM coordinates in top right corner, see settings in [Apps and Programs Used] for how to set this up. See photo below for an example of what a proper photo should look like. 
+  - ALWAYS orient camera landscape when taking photos. This is because of the way the photos are processed for reporting.
+  - The first photo you take should always be of the road with the `site_id` on the site card visible in the corner (or a photo of site card filled in with site name, date, stream name) so that it is easy/possible to know where the photos came from Figure \@ref(fig:road-photo).
+  - It is important to let the App “find” where you are before taking the first photos at a new site.  It can take a few seconds for the app to zoom into the location where you are standing once it is opened.
+  - Closing the app every time you use it will help your phone battery not drain.
+  
+```{r road-photo, fig.cap = "The first photo should always of the road with the `site_id` on the site card visible in the corner",eval=T}
+knitr::include_graphics("fig/fieldwork/crossing_all.JPG")
+```
+  
+
 <br>
 
 
-Ensuring photos are stored and backed up appropriately in case anything goes wrong is super important. We suggest storing the photos in 3 places:
+<br>
+
+
+Ensuring photos are stored and backed up appropriately in case anything goes wrong is very important. We store photos in 3 places:
 
   1. On your phone in your photos app
   2. In Mergin on the digital field forms for each site as explained above
@@ -220,5 +160,32 @@ Photos should also be taken of the paper field forms at the end of the day.
 - Make sure you have enough storage available to take lots of photos!
 
   
-  
+## Backup Maps for Field Navigation
+We want to get the job done no matter what. In many areas that we work we have backup pdf maps that allow us to navigate
+to sites regardless of whether Mergin is operational or not (usually is but every once in a while technical challenges can occur).
+
+<br>
+
+If pdf maps are available for a watershed group they are located at https://hillcrestgeo.ca/outgoing/fishpassage/projects/ .  The 
+maps are organized by watershed group code (ex. BULK is the Bulkley River watershed group, and KISP is the Kispiox River watershed group)
+
+<br>
+
+In order to navigate using our pdf maps we use [Avenza Maps](https://store.avenza.com/) is key for loading georeferenced pdf field maps from <>. We also add `kml` files of our target sites (taken from safety plans) to `Avenza` to make navigation easy. The paid version is necessary to load many maps at the same time for big projects.
+
+
+<br>
+
+
+In order to get the pdf maps from the Hillcrest server to our phones we use [Dropbox](https://www.dropbox.com/).  The maps are first 
+downloaded to dropbox - then loaded to the phone through the dropbox app.
+
+```{r}
+# 4. [Garmin BaseCamp](https://www.garmin.com/en-CA/software/basecamp/) is used to move `gpx` files in and out of our gps. We export tracks out of `Basemap` with the track names unchanged and we name the `gpx` files informatively (see screenshot below for example). **Note: The gps units have a little \$150 micro sd card behind the batteries that can come loose, this chip is key to knowing where we are going. Be careful when changing batteries.**
+```
+
+
+
+
+
 
