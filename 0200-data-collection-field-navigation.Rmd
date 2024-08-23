@@ -99,13 +99,15 @@ It's important to write detailed comments in the `Assessment Comments" section o
   
 ### Photos
 
-Photos are one of the most important pieces of data we collect with the majority of which loaded to our digital field forms. The [Timestamp Camera app](http://www.timestampcamera.com/) is used to take photos (landscape only) in the field. Ensure the current date and time and UTM coordinates are in top right corner using the settings in Figure \@ref(fig:timestamp-settings), take the photos on the camera first - then load to the field form after (for backup).
+Photos are one of the most important pieces of data we collect with the majority of which loaded to our digital field forms. The [Timestamp Camera app](http://www.timestampcamera.com/) is used to take photos (landscape only) in the field. 
+
+<br>
+
+Ensure the current date and time and UTM coordinates are in top right corner of the timestamp app. Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner when in the timestamp app.
 
 
-```{r timestamp-settings, fig.cap = "Left: Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner. Right: Timestamp UTM and time display settings.", fig.show="hold", out.width= c("49.5%","1%","49.5%"), }
+```{r timestamp-settings, fig.cap = "Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner when in the timestamp app.", out.width='50%'}
 knitr::include_graphics("fig/fieldwork/timestamp_settings_access.jpg")
-knitr::include_graphics("fig/pixel.png")
-knitr::include_graphics("fig/fieldwork/timestamp_settings.JPG")
 ```
 
 Photos are taken at surveyed crossings and all SIX of the following images are always required: **road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing** (Figure \@ref(fig:timestamp-settings)). Take photos on the camera first then add to the digital field form in the photos sections following the instructions below:
