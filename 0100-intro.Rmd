@@ -5,9 +5,10 @@
 `r if(identical(params$gitbook_on, FALSE)){knitr::asis_output("<br>")}`
 
 This guidebook is a rough start to document New Graph Environment's fish passage restoration planning methods to help build internal
-and external capacity. It is currently not complete, extremely rough and likely contains errors. Please refer to provincial methods for data to be submitted to the province and our methodologies are intended to complement these methods vs replace them. 
+and external capacity. It is currently not even close to complete, extremely rough and likely contains errors. Please refer to provincial methods for data to be submitted to the province and our methodologies are intended to complement these methods vs replace them. 
 
   * [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]
   * [A Checklist for Fish Habitat Confirmation Prior to the Rehabilitation of a Stream Crossing](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/checklist-for-fish-habitat-confirmation-201112.pdf) [@confirmation_checklist_2011]
   * [Reconnaissance (1:20,000) Fish and Fish Habitat Inventory: Site Card Field Guide](https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/laws-policies-standards-guidance/inventory-standards/aquatic-ecosystems)
 
+The sections started to date include a bit about field data collection and navigation but future sections can include more about data management, data analysis, reporting, and how to use the data for decision making.
