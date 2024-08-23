@@ -1,6 +1,6 @@
 # resize images to save space. Portrait need the out.width set to out.width='50%' in the chunk though
 photos <- c("timestamp_settings_access.jpg",
-            "timestamp_settings.jpeg",
+            "timestamp_settings.jpg",
             "methods_mobile.jpg",
             "more_sections.jpg",
             "photos_mobile.jpg")
