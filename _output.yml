@@ -6,7 +6,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Fish Passage Guidebook</a></li>
       after: |
-        <li><a href="https://github.com/NewGraphEnvironment/fish_pasage_guidebook" target="blank">Scripts and Data</a></li>
+        <li><a href="https://github.com/NewGraphEnvironment/fish_passage_guidebook" target="blank">Scripts and Data</a></li>
       collapse: section
     download: ["fish_passage_guidebook.pdf", "fish_passage_guidebook.html"]
     fontsettings:
