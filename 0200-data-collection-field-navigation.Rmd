@@ -1,6 +1,6 @@
 # Data Collection and Field Navigation
 
-When in the field, we use Mergin Maps on our phones to visual the area, but also to add data to the map through digital field forms. This allows us to locate upstream and downstream features such as crossings, barriers, and fish observation. We can also use it to determine the type of surrounding habitat and land use, as well as what type of habitat the stream is modeled as in [bcfishpass](https://smnorris.github.io/bcfishpass/)[@norris2024smnorrisbcfishpass]. 
+When in the field, we use Mergin Maps on our phones to visual the area, but also to add data to the map through digital field forms. This allows us to locate upstream and downstream features such as crossings, barriers, and fish observation. We can also use it to determine the type of surrounding habitat and land use, as well as what type of habitat the stream is modeled as in [bcfishpass](https://smnorris.github.io/bcfishpass/) [@norris2024smnorrisbcfishpass]. 
 
 <br>
 
@@ -11,8 +11,15 @@ When in the field, we use Mergin Maps on our phones to visual the area, but also
 
 1. [Timestamp Camera](http://www.timestampcamera.com/) is used to take photos (landscape only) in the field. Ensure the current date and time and UTM coordinates are in top right corner using the settings below. 
 
-```{r timestamp, fig.cap = "Timestamp settings",eval=T}
-knitr::include_graphics("fig/fieldwork/timestamp.png")
+```{r timestamp-settings-access, fig.cap = "Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner", out.width='50%', eval=T}
+
+knitr::include_graphics("fig/fieldwork/timestamp_settings_access.jpg")
+
+```
+
+```{r timestamp-settings, fig.cap = "Proper Timestamp settings", out.width='50%', eval=T}
+
+knitr::include_graphics("fig/fieldwork/timestamp_settings.jpg")
 ```
 
 2. [Avenza Maps](https://store.avenza.com/) is key for loading georeferenced pdf field maps from <https://hillcrestgeo.ca/outgoing/fishpassage/projects/>. We also add `kml` files of our target sites (taken from safety plans) to `Avenza` to make navigation easy. The paid version is necessary to load many maps at the same time for big projects.
@@ -53,19 +60,24 @@ Mergin is great because we can use it in the field without wifi or cell service.
 ### Field Data Entry into Mergin
   
 
-We have digital field forms through Mergin Maps that allow you to add features and data to the map while in the field. Most of the time we don't have service, so we just save our Projects often and then once back in service we sync with the cloud. Follow the instructions below to add a feature (site) to the project map:
+We have digital field forms through Mergin Maps that allow you to add features (sites) and data to the map while in the field. 
 
-  1. Follow the [instructions add a feature](https://merginmaps.com/docs/field/mobile-app-ui/#add).
-  2. Ensure you are adding the feature to the correct layer, most likely `Form PSCIS` or `Form FISS Site`. Then tap `record` at the bottom of the screen.
-  3. Next, a form will appear and you can enter the data. The form is divided into sections which you can see at the top of the screen. Navigate through each section to enter data.
+Always collect the all the information, including the photos, so that we have what we need. If you don't collect some information then write in the assessment comments why it is missing. For example, if you cannot see the inlet of the culvert, take a picture of what you can see and upload it to Mergin then explain in the assessment comments that the inlet was not visible. Same with fields you are not sure of, fill everything out and put details in the assessment comments of what is going on. It's important that the photos uploaded be different, using the same photo for more than one section (Ex: Upstream photo and Inlet Photo) creates data management issues.
+
+Follow the instructions below to add a feature (site) to the project map:
+
+  1. Follow the [instructions to add a feature to a specific layer](https://merginmaps.com/docs/field/mobile-app-ui/#add).
+  2. Ensure you are adding the feature to the correct layer, most likely `Form PSCIS`. Then tap `record` at the bottom of the screen.
+  3. Next, a form will appear and you can enter the data. The form is divided into sections which you can see at the top of the screen. The `Stream` and `Climate` sections will only become visible if you have selected `closed bottom structure` for the  `crossing type` because only closed bottom structures require that information. Navigate through each section to enter data.
+  4. Click the green check mark in the top right corner to save the feature.
  
-```{r features-mobile, fig.cap = "Features form is divided into sections at the top of the screen",eval=T}
-knitr::include_graphics("fig/mapping/features_mobile.PNG")
+```{r sections-mobile, fig.cap = "The `Stream` and `Climate` sections will only become visible if you have selected `closed bottom structure` for the  `crossing type` ", out.width='50%', eval=T}
+knitr::include_graphics("fig/fieldwork/more_sections.jpg")
 ```
 
-  4. Save the forms as often as possible so if it glitches or fails you don't lose your work.
+  5. Save the forms as often as possible so if it glitches or fails you don't lose your work.
   
-  5. When you are no longer offline, **make sure to [sync](https://merginmaps.com/docs/field/mobile-app-ui/#sync) your changes!**
+  6. When you are no longer offline, **[make sure to sync](https://merginmaps.com/docs/field/mobile-app-ui/#sync) your changes!**
 
 <br>
 
@@ -75,7 +87,7 @@ When adding features (sites) to the project map, here are some things to take no
   
   - In addition to using the digital field forms (see above section), **make sure to fill out the paper copies as well** because over the last year we have seen uncommon issues with syncing and data corruption.
   
-  - Switching between themes can be very useful for seeing different levels of detail in the field. Some of the commong themes we use are: ADD COMMON THEMESE!!
+  - Switching between themes can be very useful for seeing different levels of detail in the field. Some of the common themes we use are: ADD COMMON THEMES!!
 
   - The `site_id` is important:
     - If a site has a `PSCIS ID` then that is used as the identifier. 
@@ -86,11 +98,19 @@ When adding features (sites) to the project map, here are some things to take no
   
 ## Fish passage assessment methods
 
-In the field, crossings are assessed for fish passage following the procedures outlined in “Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures” [@fish_passage_assessments]. All data should be entered using the digital field forms in Mergin Maps. Please see [Field Data Entry into Mergin] for how to enter data into Mergin. 
+In the field, crossings are assessed for fish passage following the procedures outlined in [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]. There is a link to these methods in the digital field form so you can easily access them while in the field if you have cell service. 
 
-Photos are taken at surveyed crossings and when possible included images of the road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing and any other relevant features, in that order. See [Photos] for how to take proper photos.
+```{r methods-mobile, fig.cap = "The methods used for fish passage assessments can be found in the digital field form under 'Methods'", out.width='50%', eval=T}
+knitr::include_graphics("fig/fieldwork/methods_mobile.jpg")
+```
 
-The following information should be recorded and entered into Mergin Maps for all surveyed crossings. The list below is an example of what information is included in the digital field forms in Mergin:
+<br>
+
+### Digital field forms
+
+All data should be entered using the digital field forms in Mergin Maps. Please see [Field Data Entry into Mergin] for how to enter data into Mergin. 
+
+The list below is an example of what information is included in the `Form PSCIS` digital field form in Mergin:
 
   - date of inspection
   - crossing reference 
@@ -104,8 +124,7 @@ The following information should be recorded and entered into Mergin Maps for al
   - culvert diameter or span for OBS (Open Bottom Structure)
   - culvert length or width for OBS
 
-
-A more detailed “full assessment” should be completed for all closed bottom structures and included the following parameters: 
+A more detailed “full assessment” should be completed for all **closed bottom structures** (open bottom structures such as bridges and fords do not rquire at much information). Once you select `closed bottom structure` for the  `crossing type` in the `Crossing` section, you will see 2 new sections appear, `Stream` and `Climate` which include the following parameters (Figure \@ref(fig:sections-mobile):
 
   - presence/absence of continuous culvert embedment (yes/no) 
   - average depth of embedment 
@@ -133,22 +152,63 @@ fpr_table_habvalue %>%
   
 ```
 
+
+### Comments
+
+It's important to write detailed comments because this will help us understand what was going on at the site when we are back in the office. Comments should include anything that will help us paint a good picture of the crossing. Some example are:
+
+- the condition of the culvert/crossing
+- observations of riparian health or deterioration and potential causes (cattle, erosion, stream velocity, etc)
+- if fish were observed 
+- the location of the crossing if it was incorrectly mapped
+- reasons for missing photos
+
   
-## Photos
+### Photos
 
-Taking proper photos is important for visualizing the site, data QA, and the quality of our report. See the [Apps and Programs Used] sections to download the TimeStamp app. Below are some tips for taking proper photos:
+Taking proper photos is important for visualizing the site, data QA, and the quality of our report. It's really important to have the correct location and time information included in the photo because this allows us to determine which site the photo came from if it gets lost somewhere. 
 
+See the [Apps and Programs Used] sections for how to download the TimeStamp app and set up the correct location and time settings. 
 
-- Use the TimeStamp app
-- Ensure the current time and UTM coordinates in top right corner, see settings in [Apps and Programs Used] for how to set this up. See photo below for proper coordinates. 
-- Orient camera landscape when taking photos.
-- The first photo you take should always be of the road with the `site_id` on the site card visible in the corner (or a photo of site card filled in with site name, date, stream name) so that it is easy/possible to know which photos come from where.
+Below are some tips for taking proper photos:
+
+  - Use the TimeStamp app
+  - Ensure the current time and UTM coordinates in top right corner, see settings in [Apps and Programs Used] for how to set this up. See photo below for an example of what a proper photo should look like. 
+  - Orient camera landscape when taking photos.
+  - The first photo you take should always be of the road with the `site_id` on the site card visible in the corner (or a photo of site card filled in with site name, date, stream name) so that it is easy/possible to know where the photos came from.
 
 ```{r road-photo, fig.cap = "The first photo should always of the road with the `site_id` on the site card visible in the corner",eval=T}
 knitr::include_graphics("fig/fieldwork/road_photo.png")
 ```
-- It is important to let the App “find” where you are before taking the first photos at a new site.  It can take a few seconds for the app to zoom into the location where you are standing once it is opened.
-- Closing the app every time you use it will help your phone battery not drain.
+  
+  - It is important to let the App “find” where you are before taking the first photos at a new site.  It can take a few seconds for the app to zoom into the location where you are standing once it is opened.
+  - Closing the app every time you use it will help your phone battery not drain.
+
+<br>
+
+Photos are taken at surveyed crossings and when possible include images of the **road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing** and any other relevant features. These photos should be added to the digital field form in the photos section following the instructions below:
+
+  1. Take photos following the tips above
+  2. Navigate to the `Photos` section of the digital field form
+  3. You will see a place to add each photo under the correct name (Ex: Road photo, Barrel Photo, etc)
+  4. Add photos` From Gallery`
+  5. **Do not use the same photo for more than one section** (Ex: Upstream photo and Inlet Photo) because this creates data management issues.
+  
+```{r photos-mobile, fig.cap = "Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form", out.width='50%', eval=T}
+
+knitr::include_graphics("fig/fieldwork/photos_mobile.jpg")
+```
+
+<br>
+
+
+Ensuring photos are stored and backed up appropriately in case anything goes wrong is super important. We suggest storing the photos in 3 places:
+
+  1. On your phone in your photos app
+  2. In Mergin on the digital field forms for each site as explained above
+  3. On a cloud based service such as icloud or google photos, etc. You will likely have to pay for more storage to handle all the photos. Make sure you **sync** your photos to the cloud when are are back in service.
+  
+Photos should also be taken of the paper field forms at the end of the day. 
 
 
 ## Phone and battery management
@@ -157,8 +217,7 @@ knitr::include_graphics("fig/fieldwork/road_photo.png")
 - Always plug in your phone when driving so it can charge. 
 - Always carry an external battery pack so that you can charge your phone if it dies. 
 - Ensure your phone is in a quality case.
-
-Need some sort of cloud backup so that photos sync to the cloud each night. they are on phone AND in mergin. At end of day take photos in order of all field pages
+- Make sure you have enough storage available to take lots of photos!
 
   
   

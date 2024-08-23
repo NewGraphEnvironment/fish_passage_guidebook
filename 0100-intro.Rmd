@@ -5,3 +5,5 @@
 `r if(identical(params$gitbook_on, FALSE)){knitr::asis_output("<br>")}`
 
 This document is to help you get up to speed with New Graph Environment's fish passage assessment protocols. 
+
+This document is a work in progress and will be updated weekly, please check back in soon for further updates.
