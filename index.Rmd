@@ -2,17 +2,13 @@
 title: "Fish Passage Guidebook"
 author: |
  |
- | Prepared for
-
- |
- |
  | Prepared by
  | Al Irvine, B.Sc., R.P.Bio. and Lucy Schick, B.Sc.
  | New Graph Environment Ltd.
 
 date: |
  |
- | Version 0.0.6 `r format(Sys.Date(), "%Y-%m-%d")`
+ | Version 0.0.1 `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
 output: 
