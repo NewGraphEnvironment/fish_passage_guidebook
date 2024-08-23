@@ -1,6 +1,6 @@
 # Safety and Equipment
 
-Learning and evolving a safety program couldn't be more important. We need to do everything we can to look after ourselves and each other.  Overall - some of the biggest things we can do is make sure people know where we are and when we are coming home, what communications are expected, we assess the hazzards and minimize there risk.  Having the right equipment is a huge part of that. You can find our detailed Health and Safety Plan here https://www.newgraphenvironment.com/hsp/.  It changes all the time and those changes are reflected in our project specific safety plans and tailboard meetings.  
+Learning and evolving a safety program couldn't be more important. We need to do everything we can to look after ourselves and each other.  Overall - some of the biggest things we can do is make sure people know where we are and when we are coming home, what communications are expected, we assess the hazards and minimize there risk.  Having the right equipment is a huge part of that. You can find our detailed Health and Safety Plan here https://www.newgraphenvironment.com/hsp/.  It changes all the time and those changes are reflected in our project specific safety plans and tailboard meetings.  
 
 ## Field Safety Plans
 
@@ -46,7 +46,7 @@ readr::read_csv(
 
 ## Tailboards
 
-Tailboard meetings are a way to reset at the start of new work tasks to put safety first as the top priority at all places of work. Our tailboard template is unique in that it contains documentation of numerous safety policy actions in one place. Tailboards help us identify hazzards so we can mitigated their risk and communicate about past experience where we learned how to avoid injuries. 
+Tailboard meetings are a way to reset at the start of new work tasks to put safety first as the top priority at all places of work. Our tailboard template is unique in that it contains documentation of numerous safety policy actions in one place. Tailboards help us identify hazards so we can mitigated their risk and communicate about past experience where we learned how to avoid injuries. 
 
 <br>
 
@@ -63,7 +63,7 @@ A copy of our tailboard can be found here https://github.com/NewGraphEnvironment
 - First Aid Assessments
 
 
-## Emergency responce plans
+## Emergency response plans
 
 Similar to how we make a field safety plan for each job site, we also make an emergency response plan so that all crew members and staff know what to do in case of an emergency. It important that everyone has reviewed this plan and knows where it is stored in case it needs to be reviewed. 
 
@@ -73,7 +73,7 @@ Information included in these plans include:
 
 - Names and contacts for all crew members
 - Emergency contacts
-- Location of nearest hostpital
+- Location of nearest hospital
 - Evacuation assembly location
 - Evacuation route
 - Location of fire extinguisher and spill kit
