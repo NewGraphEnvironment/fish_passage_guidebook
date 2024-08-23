@@ -99,7 +99,7 @@ It's important to write detailed comments in the `Assessment Comments" section o
   
 ### Photos
 
-Photos are one of the most important pieces of data we collect wiht the majority of which loaded to our digital field forms. The [Timestamp Camera app](http://www.timestampcamera.com/) is used to take photos (landscape only) in the field. Ensure the current date and time and UTM coordinates are in top right corner using the settings in Figure \@ref(fig:timestamp-settings), take the photos on the camera first - then load to the field form after (for backup).
+Photos are one of the most important pieces of data we collect with the majority of which loaded to our digital field forms. The [Timestamp Camera app](http://www.timestampcamera.com/) is used to take photos (landscape only) in the field. Ensure the current date and time and UTM coordinates are in top right corner using the settings in Figure \@ref(fig:timestamp-settings), take the photos on the camera first - then load to the field form after (for backup).
 
 
 ```{r timestamp-settings, fig.cap = "Left: Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner. Right: Timestamp UTM and time display settings.", fig.show="hold", out.width= c("49.5%","1%","49.5%"), }
@@ -108,30 +108,33 @@ knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics("fig/fieldwork/timestamp_settings.JPG")
 ```
 
-Photos are taken at surveyed crossings and all SIX of the following images are always required: **road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing**. These photos should be taken on the camera first
-then added to the digital field form in the photos sections following the instructions below:
-
-  1. Take photos following the tips above
+Photos are taken at surveyed crossings and all SIX of the following images are always required: **road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing** (Figure \@ref(fig:timestamp-settings)). Take photos on the camera first then add to the digital field form in the photos sections following the instructions below:
   2. Navigate to the `Photos` section of the digital field form
   3. You will see a place to add each photo under the correct name (Ex: Road photo, Barrel Photo, etc)
   4. Add photos` From Gallery`
   5. **Do not use the same photo for more than one section** (Ex: Upstream photo and Inlet Photo) because this creates data management issues.
+
+```{r photos-mobile, fig.cap = "Left: Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form, Right:Examples of six required pohtos.  From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.", fig.show="hold", out.width= c("49.5%","1%","49.5%"), }
+knitr::include_graphics("fig/fieldwork/photos_mobile.jpg")
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics("fig/fieldwork/crossing_all.JPG")
+```
   
-```{r photos-mobile, fig.cap = "Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form", out.width='50%', eval=T}
+```{r photos-mobile2, fig.cap = "Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form", out.width='50%', eval=F}
 
 knitr::include_graphics("fig/fieldwork/photos_mobile.jpg")
 ```
 
 Below are some tips for taking proper photos:
 
-  - Use the TimeStamp app
-  - Ensure the current time and UTM coordinates in top right corner, see settings in [Apps and Programs Used] for how to set this up. See photo below for an example of what a proper photo should look like. 
-  - ALWAYS orient camera landscape when taking photos. This is because of the way the photos are processed for reporting.
-  - The first photo you take should always be of the road with the `site_id` on the site card visible in the corner (or a photo of site card filled in with site name, date, stream name) so that it is easy/possible to know where the photos came from Figure \@ref(fig:road-photo).
+  - Use the TimeStamp app with the correct settings and ALWAYS orient camera landscape when taking photos. This is because of the way the photos are processed for reporting.
+  - The first photo you take should always be of the road with the `site_id` on the site card visible in the corner (or a photo of site card filled in with site name, date, stream name).  This allows sorting of photos based on site for all photos transfered from 
+  the phone to the cloud or hardrive. 
+  - Include something for scale.  We use ski poles for safety navigating in slippery uneven streambeds and to measure depth so one of the poles can be used for scale in the photos. This can come in very handy for understanding stream and crossing structure characteristics just by reviewing the photos.
   - It is important to let the App “find” where you are before taking the first photos at a new site.  It can take a few seconds for the app to zoom into the location where you are standing once it is opened.
   - Closing the app every time you use it will help your phone battery not drain.
   
-```{r road-photo, fig.cap = "The first photo should always of the road with the `site_id` on the site card visible in the corner",eval=T}
+```{r road-photo, fig.cap = "Examples of six required pohtos.  From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.",eval=F}
 knitr::include_graphics("fig/fieldwork/crossing_all.JPG")
 ```
   
