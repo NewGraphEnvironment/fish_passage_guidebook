@@ -66,6 +66,7 @@ knitr::include_graphics("fig/fieldwork/more_sections.jpg")
   
   6. When you are no longer offline, **[make sure to sync](https://merginmaps.com/docs/field/mobile-app-ui/#sync) your changes!** to the online shared project.
 
+<br>
 
 When adding features (sites) to the project map, here are some things to take note of:
 
@@ -73,7 +74,7 @@ When adding features (sites) to the project map, here are some things to take no
   
   - In addition to using the digital field forms (see above section), **make sure to fill out the paper copies as well** as in the past we have seen uncommon issues with syncing and data corruption.
   
-  - Switching between themes can be very useful for seeing different levels of detail in the field. Some of the common themes we use are: ADD COMMON THEMES!!
+  - Switching between themes can be very useful for seeing different levels of detail in the field. The most common theme we use while in the field is: `High detail - Crossings`
 
   - The `site_id` is important:
     - If a site has a `PSCIS ID` then that is used as the identifier. 
@@ -82,6 +83,7 @@ When adding features (sites) to the project map, here are some things to take no
   
   - If there is an associated` chris_culvert_id` ("MoTi" identifier) we include that as well.
   
+<br>
   
 Always collect the all the information, including the photos, so that we have what we need. If you don't collect some information then write in the assessment comments why it is missing. For example, if you cannot see the inlet of the culvert, take a picture of what you can see and upload it to Mergin then explain in the assessment comments that the inlet was not visible. Same with fields you are not sure of, fill everything out and put details in the assessment comments of what is going on. It's important that each of the photos uploaded be different, using the same photo for more than one section (ex. Outlet photo and Barrel Photo) creates data management issues.
   
@@ -106,17 +108,23 @@ Photos are one of the most important pieces of data we collect with the majority
 Ensure the current date and time and UTM coordinates are in top right corner of the timestamp app. Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner when in the timestamp app.
 
 
-```{r timestamp-settings, fig.cap = "Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner when in the timestamp app.", out.width='50%'}
+```{r timestamp-settings, fig.cap = "Left: Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner when in the timestamp app. Right: Use these Timestamp settings.", fig.show="hold", out.width= c("49.5%","1%","49.5%")}
 knitr::include_graphics("fig/fieldwork/timestamp_settings_access.jpg")
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics("fig/fieldwork/timestamp_settings.jpg")
 ```
 
-Photos are taken at surveyed crossings and all SIX of the following images are always required: **road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing** (Figure \@ref(fig:timestamp-settings)). Take photos on the camera first then add to the digital field form in the photos sections following the instructions below:
-  2. Navigate to the `Photos` section of the digital field form
-  3. You will see a place to add each photo under the correct name (Ex: Road photo, Barrel Photo, etc)
-  4. Add photos` From Gallery`
-  5. **Do not use the same photo for more than one section** (Ex: Upstream photo and Inlet Photo) because this creates data management issues.
+<br>
 
-```{r photos-mobile, fig.cap = "Left: Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form, Right:Examples of six required pohtos.  From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.", fig.show="hold", out.width= c("49.5%","1%","49.5%"), }
+Photos are taken at surveyed crossings and all SIX of the following images are always required: **road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing** (Figure \@ref(fig:photos-mobile)). Take photos on the camera first then add to the digital field form in the photos sections following the instructions below:
+
+  1. Navigate to the `Photos` section of the digital field form
+  2. You will see a place to add each photo under the correct name (Ex: Road photo, Barrel Photo, etc)
+  3. Add photos` From Gallery`
+  4. **Do not use the same photo for more than one section** (Ex: Upstream photo and Inlet Photo) because this creates data management issues.
+
+
+```{r photos-mobile, fig.cap = "Left: Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form, Right: Examples of six required pohtos.  From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.", fig.show="hold", out.width= c("49.5%","1%","49.5%"), }
 knitr::include_graphics("fig/fieldwork/photos_mobile.jpg")
 knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics("fig/fieldwork/crossing_all.JPG")
@@ -126,6 +134,8 @@ knitr::include_graphics("fig/fieldwork/crossing_all.JPG")
 
 knitr::include_graphics("fig/fieldwork/photos_mobile.jpg")
 ```
+
+<br>
 
 Below are some tips for taking proper photos:
 
