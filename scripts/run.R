@@ -3,7 +3,7 @@ preview_chapter('0100-intro.Rmd')
 
 # define if we want to update the bib - don't need to if we leave as detailed in the index.Rmd params: Willj
 # need to pull out of the bookdown::render_book call though
-update_bib <- TRUE
+update_bib <- FALSE
 
 # add/update the NEWS.md to the book as an appendix and build the gitbook
 {

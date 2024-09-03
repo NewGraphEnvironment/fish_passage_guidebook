@@ -74,14 +74,19 @@ When adding features (sites) to the project map, here are some things to take no
   
   - In addition to using the digital field forms (see above section), **make sure to fill out the paper copies as well** as in the past we have seen uncommon issues with syncing and data corruption.
   
-  - Switching between themes can be very useful for seeing different levels of detail in the field. The most common theme we use while in the field is: `High detail - Crossings`
+  - Switching between themes can be very useful for seeing different levels of detail in the field. The most common theme when navigating to sites in the field is: `Low detail - {Species} Model` with other more detailed themes (ex. `High Detail - Crossings`) used when researching background information for the site (ex. species upstream, MoTi Culvert ID)
 
-  - The `site_id` is important:
-    - If a site has a `PSCIS ID` then that is used as the identifier. 
+
+#### Site Identification
+  - The identification of each site is important for workflow data processing and necessarily a bit complicated.  It involves one of either `PSCIS Crossing ID` or a `Modelled ID`.  There can also be multiple `MoTi Chris Culvert ID`s for each site:
+
+  1. If a site has a `PSCIS Crossing ID` (`stream_crossing_id` within the `Crossings - PSCIS assessment` layer)  then that is used as the identifier. 
     
-    - If there is no `PSCIS ID` we use the "Crossing - Modelled ID" (a.k.a "My Crossing Reference") as the "Modelled ID". If there is neither (rare but usually occurs when a stream is not mapped) we use a numeric ID based on the date (YYYYMMDD01 - example 2023070502 - would be our second assessment for the day).
+  2. If there is no `PSCIS Crossing ID` we use the `Modelled ID` which is the `modelled_crossing_id` filed from the `Crossings - modelled` layer. 
   
-  - If there is an associated` chris_culvert_id` ("MoTi" identifier) we include that as well.
+  3. If there is neither a `PSCIS Crossing ID`  or a ``PSCIS Crossing ID`  or a `Modelled ID` (rare but usually occurs when a stream is not mapped correctly) we use a numeric ID based on the date (YYYYMMDD01 - example 2023070502 - would be the second assessment by a field surveyor for the day). It is important to not have duplicate `Modelled ID`s so each surveyor should be assigned their own number series to append to the date for each day (ex. surveyor 1 has 1 - 49 and surveyor 2 has series 50 - 99).
+  
+  4. If there are associated `MoTi Chris Culvert ID`s (Ministry of Transportation and Infrastructure's own culvert tracking system) we include those in their respective fields as well. These IDs can be found in the `Crossings` gropu within the `MOTi Culverts` layer which can be turned on with the `High Detail - Crossings` layer.  This layer can be helpful for finding crossings that land in spots not located in spots as mapped.
   
 <br>
   

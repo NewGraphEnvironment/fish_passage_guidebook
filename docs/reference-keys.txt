@@ -27,6 +27,7 @@ mergin-maps
 set-up
 using-mergin-on-a-mobile-device
 field-data-entry-into-mergin
+site-identification
 assessment-comments
 photos
 phone-and-battery-management

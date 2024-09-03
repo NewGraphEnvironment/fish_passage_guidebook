@@ -323,19 +323,27 @@ Figure 3.2: The <code>Stream</code> and <code>Climate</code> sections will only 
 <li><p>While entering information save the form often as glitches can occur which can lead to loosing work.</p></li>
 <li><p>When you are no longer offline, <strong><a href="https://merginmaps.com/docs/field/mobile-app-ui/#sync">make sure to sync</a> your changes!</strong> to the online shared project.</p></li>
 </ol>
+<p><br></p>
 <p>When adding features (sites) to the project map, here are some things to take note of:</p>
 <ul>
 <li><p>We find that Mergin works much better (faster rendering) with <em>airplane</em> mode on.</p></li>
 <li><p>In addition to using the digital field forms (see above section), <strong>make sure to fill out the paper copies as well</strong> as in the past we have seen uncommon issues with syncing and data corruption.</p></li>
-<li><p>Switching between themes can be very useful for seeing different levels of detail in the field. Some of the common themes we use are: ADD COMMON THEMES!!</p></li>
-<li><p>The <code>site_id</code> is important:</p>
-<ul>
-<li><p>If a site has a <code>PSCIS ID</code> then that is used as the identifier.</p></li>
-<li><p>If there is no <code>PSCIS ID</code> we use the “Crossing - Modelled ID” (a.k.a “My Crossing Reference”) as the “Modelled ID”. If there is neither (rare but usually occurs when a stream is not mapped) we use a numeric ID based on the date (YYYYMMDD01 - example 2023070502 - would be our second assessment for the day).</p></li>
-</ul></li>
-<li><p>If there is an associated<code>chris_culvert_id</code> (“MoTi” identifier) we include that as well.</p></li>
+<li><p>Switching between themes can be very useful for seeing different levels of detail in the field. The most common theme when navigating to sites in the field is: <code>Low detail - {Species} Model</code> with other more detailed themes (ex. <code>High Detail - Crossings</code>) used when researching background information for the site (ex. species upstream, MoTi Culvert ID)</p></li>
 </ul>
+<div id="site-identification" class="section level4 hasAnchor" number="3.2.3.1">
+<h4><span class="header-section-number">3.2.3.1</span> Site Identification<a href="data-collection-and-field-navigation.html#site-identification" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>The identification of each site is important for workflow data processing and necessarily a bit complicated. It involves one of either <code>PSCIS Crossing ID</code> or a <code>Modelled ID</code>. There can also be multiple <code>MoTi Chris Culvert ID</code>s for each site:</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>If a site has a <code>PSCIS Crossing ID</code> (<code>stream_crossing_id</code> within the <code>Crossings - PSCIS assessment</code> layer) then that is used as the identifier.</p></li>
+<li><p>If there is no <code>PSCIS Crossing ID</code> we use the <code>Modelled ID</code> which is the <code>modelled_crossing_id</code> filed from the <code>Crossings - modelled</code> layer.</p></li>
+<li><p>If there is neither a <code>PSCIS Crossing ID</code> or a `<code>PSCIS Crossing ID</code> or a <code>Modelled ID</code> (rare but usually occurs when a stream is not mapped correctly) we use a numeric ID based on the date (YYYYMMDD01 - example 2023070502 - would be the second assessment by a field surveyor for the day). It is important to not have duplicate <code>Modelled ID</code>s so each surveyor should be assigned their own number series to append to the date for each day (ex. surveyor 1 has 1 - 49 and surveyor 2 has series 50 - 99).</p></li>
+<li><p>If there are associated <code>MoTi Chris Culvert ID</code>s (Ministry of Transportation and Infrastructure’s own culvert tracking system) we include those in their respective fields as well. These IDs can be found in the <code>Crossings</code> gropu within the <code>MOTi Culverts</code> layer which can be turned on with the <code>High Detail - Crossings</code> layer. This layer can be helpful for finding crossings that land in spots not located in spots as mapped.</p></li>
+</ol>
+<p><br></p>
 <p>Always collect the all the information, including the photos, so that we have what we need. If you don’t collect some information then write in the assessment comments why it is missing. For example, if you cannot see the inlet of the culvert, take a picture of what you can see and upload it to Mergin then explain in the assessment comments that the inlet was not visible. Same with fields you are not sure of, fill everything out and put details in the assessment comments of what is going on. It’s important that each of the photos uploaded be different, using the same photo for more than one section (ex. Outlet photo and Barrel Photo) creates data management issues.</p>
+</div>
 </div>
 <div id="assessment-comments" class="section level3 hasAnchor" number="3.2.4">
 <h3><span class="header-section-number">3.2.4</span> Assessment Comments<a href="data-collection-and-field-navigation.html#assessment-comments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -354,28 +362,34 @@ Figure 3.2: The <code>Stream</code> and <code>Climate</code> sections will only 
 <p>Photos are one of the most important pieces of data we collect with the majority of which loaded to our digital field forms. The <a href="http://www.timestampcamera.com/">Timestamp Camera app</a> is used to take photos (landscape only) in the field.</p>
 <p><br></p>
 <p>Ensure the current date and time and UTM coordinates are in top right corner of the timestamp app. Navigate to the Timestamp settings by pressing the ‘clock’ icon in the bottom right corner when in the timestamp app.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-collection-and-field-navigation.html#cb8-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/fieldwork/timestamp_settings_access.jpg&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-collection-and-field-navigation.html#cb8-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/fieldwork/timestamp_settings_access.jpg&quot;</span>)</span>
+<span id="cb8-2"><a href="data-collection-and-field-navigation.html#cb8-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb8-3"><a href="data-collection-and-field-navigation.html#cb8-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/fieldwork/timestamp_settings.jpg&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:timestamp-settings"></span>
-<img src="fig/fieldwork/timestamp_settings_access.jpg" alt="Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner when in the timestamp app." width="50%" />
+<img src="fig/fieldwork/timestamp_settings_access.jpg" alt="Left: Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner when in the timestamp app. Right: Use these Timestamp settings." width="49.5%" /><img src="fig/pixel.png" alt="Left: Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner when in the timestamp app. Right: Use these Timestamp settings." width="1%" /><img src="fig/fieldwork/timestamp_settings.jpg" alt="Left: Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner when in the timestamp app. Right: Use these Timestamp settings." width="49.5%" />
 <p class="caption">
-Figure 3.3: Navigate to the Timestamp settings by pressing the ‘clock’ icon in the bottom right corner when in the timestamp app.
+Figure 3.3: Left: Navigate to the Timestamp settings by pressing the ‘clock’ icon in the bottom right corner when in the timestamp app. Right: Use these Timestamp settings.
 </p>
 </div>
-<p>Photos are taken at surveyed crossings and all SIX of the following images are always required: <strong>road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing</strong> (Figure <a href="data-collection-and-field-navigation.html#fig:timestamp-settings">3.3</a>). Take photos on the camera first then add to the digital field form in the photos sections following the instructions below:
-2. Navigate to the <code>Photos</code> section of the digital field form
-3. You will see a place to add each photo under the correct name (Ex: Road photo, Barrel Photo, etc)
-4. Add photos<code>From Gallery</code>
-5. <strong>Do not use the same photo for more than one section</strong> (Ex: Upstream photo and Inlet Photo) because this creates data management issues.</p>
+<p><br></p>
+<p>Photos are taken at surveyed crossings and all SIX of the following images are always required: <strong>road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing</strong> (Figure <a href="data-collection-and-field-navigation.html#fig:photos-mobile">3.4</a>). Take photos on the camera first then add to the digital field form in the photos sections following the instructions below:</p>
+<ol style="list-style-type: decimal">
+<li>Navigate to the <code>Photos</code> section of the digital field form</li>
+<li>You will see a place to add each photo under the correct name (Ex: Road photo, Barrel Photo, etc)</li>
+<li>Add photos<code>From Gallery</code></li>
+<li><strong>Do not use the same photo for more than one section</strong> (Ex: Upstream photo and Inlet Photo) because this creates data management issues.</li>
+</ol>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-collection-and-field-navigation.html#cb9-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/fieldwork/photos_mobile.jpg&quot;</span>)</span>
 <span id="cb9-2"><a href="data-collection-and-field-navigation.html#cb9-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
 <span id="cb9-3"><a href="data-collection-and-field-navigation.html#cb9-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/fieldwork/crossing_all.JPG&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photos-mobile"></span>
-<img src="fig/fieldwork/photos_mobile.jpg" alt="Left: Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form, Right:Examples of six required pohtos.  From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet." width="49.5%" /><img src="fig/pixel.png" alt="Left: Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form, Right:Examples of six required pohtos.  From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet." width="1%" /><img src="fig/fieldwork/crossing_all.JPG" alt="Left: Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form, Right:Examples of six required pohtos.  From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet." width="49.5%" />
+<img src="fig/fieldwork/photos_mobile.jpg" alt="Left: Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form, Right: Examples of six required pohtos.  From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet." width="49.5%" /><img src="fig/pixel.png" alt="Left: Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form, Right: Examples of six required pohtos.  From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet." width="1%" /><img src="fig/fieldwork/crossing_all.JPG" alt="Left: Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form, Right: Examples of six required pohtos.  From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet." width="49.5%" />
 <p class="caption">
-Figure 3.4: Left: Under the correct heading (Road photo, Barrel Photo, etc), add each photo ‘From Gallery’ in the photos section of the digital field form, Right:Examples of six required pohtos. From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.
+Figure 3.4: Left: Under the correct heading (Road photo, Barrel Photo, etc), add each photo ‘From Gallery’ in the photos section of the digital field form, Right: Examples of six required pohtos. From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.
 </p>
 </div>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-collection-and-field-navigation.html#cb10-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/fieldwork/photos_mobile.jpg&quot;</span>)</span></code></pre></div>
+<p><br></p>
 <p>Below are some tips for taking proper photos:</p>
 <ul>
 <li>Use the TimeStamp app with the correct settings and ALWAYS orient camera landscape when taking photos. This is because of the way the photos are processed for reporting.</li>
