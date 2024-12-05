@@ -1,28 +1,37 @@
 # Data Collection and Field Navigation
 
 ## Fish passage assessment methods
-In the field, crossings are assessed for fish passage following the procedures outlined in [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]. There is a link to these methods in the digital field form so you can easily access them while in the field if you have cell service (Figure \@ref(fig:methods-mobile)). There is a field form
-for this work that can and should be used to collect data in the field as well. As our digital field data collection system is still in development, we are currently minimally populating a paper form as well as the digital form.  We collect more detailed comments and other information on the digital field forms but still rapidly fill out a paper form to ensure we have the data in case of a digital failure.
+In the field, crossings are assessed for fish passage following the procedures outlined in [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]. 
 
 <br>
+
+We have developed a digital field form (adapted version of the [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments] that can and should be used to collect this data in the field. Our digital field form is our primary tool for data collection and contains a high level of detail, however its still undergoing development, so we are currently minimally populating a paper form as well to ensure we have the data in case of a digital failure.
+
+<br>
+
+In addition to the methods mentioned above, here are some important things to note when collecting data:
+
+* When measuring channel width and stream gradient, take measurements upstream of crossing because this is the habitat that will be gained if remediation occurs. Take measurements outside of the road corridor, take the average of three channel widths and a slope in the longest possible section. 
+* When filling in the paper form, record crew members and circle the initials of the person who's GPS was used to record the crossing location. This avoids confusion in the data management stage. 
+* For culvert crossings with multiple pipes installed at the same elevation at the outlet, add diameters together.
+* If the crossing is an obvious barrier and the stream habitat appears high value, make a note that this location could be a high priority for follow up and a habitat confirmation.
+
+<br>
+
+There is a link to the [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments] methods in the digital field form so you can easily access them while in the field if you have cell service (Figure \@ref(fig:methods-mobile)). 
 
 ```{r methods-mobile, fig.cap = "The methods used for fish passage assessments can be found in the 'Form PSCIS' under 'Methods'", out.width='50%', eval=T}
 knitr::include_graphics("fig/fieldwork/methods_mobile.jpg")
 ```
 
 
-## Mergin Maps 
+## Digital field forms 
 
 [Mergin Maps](https://merginmaps.com/) is a geodata platform that allows us to collaborate with others by collecting data in the field and syncing to a shared QGIS project [@merginmaps2023mergin]. Check out the [Mergin Maps documentation](https://merginmaps.com/docs/) for more information.
 
 <br>
 
-
-We use Mergin Maps on our phones to locate sites, understand watershed/land values and collect data through digital field forms (adapted versions of the [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]. 
-
-<br>
-
-Once downloaded to a phone - wifi or cell service is not required to view maps and collect data. Also of note - it is not required to have the project downloaded on a laptop to see/use them on the phone - only a Mergin account with access to the `newgraph` workspace is necessary.
+We use Mergin Maps on our phones to locate sites, understand watershed/land values and collect data through our digital field forms. Once downloaded to a phone - wifi or cell service is not required to view maps and collect data. Also of note - it is not required to have the project downloaded on a laptop to see/use them on the phone - only a Mergin account with access to the `newgraph` workspace is necessary.
 
 ### Set up
 
@@ -86,7 +95,7 @@ When adding features (sites) to the project map, here are some things to take no
   
   3. If there is neither a `PSCIS Crossing ID`  or a `Modelled ID` (rare but usually occurs when a stream is not mapped correctly) we use a numeric ID based on the date (YYYYMMDD01 - example 2023070502 - would be the second assessment by a field surveyor for the day). It is important to not have duplicate `Modelled ID`s so each surveyor should be assigned their own number series to append to the date for each day (ex. surveyor 1 has 1 - 49 and surveyor 2 has series 50 - 99).
   
-  4. If there are associated `MoTi Chris Culvert ID`s (Ministry of Transportation and Infrastructure's own culvert tracking system) we include those in their respective fields, found in the Overview section of the form. `MoTi Chris Culvert ID`s can be found in the `Crossings` group within the `MOTi Culverts` layer which can be turned on with the `High Detail - Crossings` layer.  This layer can be helpful for finding crossings that land in spots not located in spots as mapped.
+  4. If there are associated `MoTi Chris Culvert ID`s or `MoTi Major structures` (Ministry of Transportation and Infrastructure's own culvert tracking system) we include those in the `MoTi Chris Culvert ID` fields, found in the `Overview` section of the form. To view these structures on the map, you can find the `MoTi Culverts` and `MoTi major structures` layers in the `Crossings` group, which can be turned on with the `High Detail - Crossings` theme or by hand.  The `MoTi Culverts` layer can be helpful for finding crossings that land in spots not located as mapped.
   
 <br>
   
@@ -99,11 +108,14 @@ It's important to write detailed comments regarding the habitat in the `Comments
 - justification for habitat value rating (ex. good flow and some gravels present)
 - the condition of the culvert/crossing
 - observations of riparian health or deterioration and potential causes (cattle, erosion, stream velocity, etc)
-- Size, number and species (if known) of fish observed 
+- size, number and species (if known) of fish observed 
+- local knowledge if applicable
+- presence of potential natural barriers (ex: cascade or waterfall)
 - location of the crossing if it was incorrectly mapped
-- reasons for photos taken are not ideal (ex. water too high to see the inlet so it is not clear in the photo)
-- information regarding past restoration work observed
+- information regarding past restoration work
+- priority for follow up
 - adjacent landowner information if applicable. Is the landowner interested in collaborating or do they have valuable knowledge of the stream or crossing?
+- reasons for photos taken are not ideal (ex. water too high to see the inlet so it is not clear in the photo)
 
 There are also comment boxes in the `Climate` section of the form which are for climate-related notes regarding the condition of the culvert as well as the climate change risk and priority (Figure \@ref(fig:comments)). These comments are separate from habitat comments mentioned above and used for different purposes in the reporting phase so make sure to not mix these up. 
 
@@ -174,16 +186,17 @@ Below are some tips for taking proper photos:
 <br>
 
 
-<br>
+#### Backups
 
-
-Ensuring photos are stored and backed up appropriately in case anything goes wrong is very important. We store photos in 3 places:
+Ensuring photos are stored and backed up appropriately in case anything goes wrong is very important. Photos should also be taken of the paper field forms at the end of the day. We store photos in 3 places:
 
   1. On your phone in your photos app
   2. In Mergin on the digital field forms for each site as explained above
   3. On a cloud based service such as icloud or Google Photos, etc. You will likely have to pay for more storage to handle all the photos. Make sure you **sync** your photos to the cloud when are are back in service.
   
-Photos should also be taken of the paper field forms at the end of the day. 
+<br>
+
+**[Make sure to sync](https://merginmaps.com/docs/field/mobile-app-ui/#sync) your changes** your Mergin Maps as often as possible or whenever to get back into cell service.
 
 
 ## Phone and battery management
