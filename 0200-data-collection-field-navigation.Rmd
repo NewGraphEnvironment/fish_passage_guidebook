@@ -1,7 +1,7 @@
 # Data Collection and Field Navigation
 
 ## Fish passage assessment methods
-In the field, crossings are assessed for fish passage following the procedures outlined in [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]. There is a link to these methods in the digital field form so you can easily access them while in the field if you have cell service. There is a field form
+In the field, crossings are assessed for fish passage following the procedures outlined in [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]. There is a link to these methods in the digital field form so you can easily access them while in the field if you have cell service (Figure \@ref(fig:methods-mobile)). There is a field form
 for this work that can and should be used to collect data in the field as well. As our digital field data collection system is still in development, we are currently minimally populating a paper form as well as the digital form.  We collect more detailed comments and other information on the digital field forms but still rapidly fill out a paper form to ensure we have the data in case of a digital failure.
 
 <br>
@@ -29,7 +29,7 @@ Once downloaded to a phone - wifi or cell service is not required to view maps a
 Setting up Mergin Maps on a phone requires a wifi or cell connection:
 
   1. Download the Mergin Maps app from the App Store (Apple) or Google Play (Android) following the [instructions here](https://merginmaps.com/docs/setup/install-mobile-app/). 
-  2. Sign up for a "free trial" account. We suggest a username with no spaces (or special characters like %$&) such as "mwmt_isharpe" as it tells us a lot just by the name. If you have already made a username for github and it has no spaces or special characters perhaps you just want to use that one. Sign in if you have an existing account.
+  2. Sign up for a "free trial" account. We suggest a username with no spaces (or special characters like %$&) such as "newgraph_lschick" as it tells us a lot just by the name. If you have already made a username for github and it has no spaces or special characters perhaps you just want to use that one. Sign in if you have an existing account.
   3. It will require you to make a FREE trial workspace. Once this is complete you will be able to access the `newgraph` workspace at no cost (even beyond the end of the free trial period).
   4. We will receive an invitation to join the `newgraph` Mergin workspace.
   5. Switch to the `newgraph` workspace following [these instructions](https://merginmaps.com/docs/manage/workspaces/#how-to-switch-between-workspaces).
@@ -43,8 +43,8 @@ Although use in the field does not require wifi or cell service, there are actio
   1. Navigate to the Projects tab following the [instructions here](https://merginmaps.com/docs/field/mobile-app-ui/#projects).
   2. Download the project you want to view. You will need at least 2GB of storage on your phone to download a project. Once downloaded, tap the project name to open.
   3. [View the different themes](https://merginmaps.com/docs/field/mobile-app-ui/#more-options-zoom-to-project-map-themes-position-tracking-local-changes-settings) available. 
-  4. [View the available layers](https://merginmaps.com/docs/field/mobile-app-ui/#layers). You will only see one layer visible, `bcfishpass Mobile`, which contains all our layers grouped into categories. Click `bcfishpass Mobile` to view the categories, such as `Crossings`, `Forms`, `Project Specific`. Some category contains sub-categories, so have a look around to see all the available layers. Toggle a layer to turn it on of off on the map.
-    For example, if I want to make the `streams_st` layer visible, I would navigate through `bcfishpass Mobile` → `Streams` → ` Habitat models`→ `streams_st` to toggle on `streams_st`.
+  4. [View the available layers](https://merginmaps.com/docs/field/mobile-app-ui/#layers). You will only see one layer visible, `bcfishpass Mobile`, which contains all our layers grouped into categories. Click `bcfishpass Mobile` to view the categories, such as `Crossings`, `Forms`, `Project Specific`. Some category contains sub-categories, so have a look around to see all the available layers. Toggle a layer to turn it on or off on the map.
+    For example, if you want to make the `streams_st` layer visible, you would navigate through `bcfishpass Mobile` → `Streams` → ` Habitat models`→ `streams_st` to toggle on `streams_st`.
   
   5. Know how to [exit](https://merginmaps.com/docs/field/mobile-app-ui/#more-options-zoom-to-project-map-themes-position-tracking-local-changes-setting) a Project.
 
@@ -55,7 +55,7 @@ guidance below to add fish passage assessment data to the project:
 
   1. Ensure you are at the location of the culvert before adding the feature to `Form PSCIS`. 
   2. Tap `record` at the bottom of the screen.
-  3. Once the form appears you can enter the data. The form is divided into sections which you can see at the top of the screen. The `Stream` and `Climate` sections will only become visible if you have selected `closed bottom structure` for the  `crossing type` because only closed bottom structures require that information. Navigate through each section to enter data.
+  3. Once the form appears you can enter the data. The form is divided into sections which you can see at the top of the screen. The `Stream` and `Climate` sections will only become visible if you have selected `closed bottom structure` for the  `crossing_type` because only closed bottom structures require that information. Navigate through each section to enter data.
   4. Click the green check mark in the top right corner to save the feature.
  
 ```{r sections-mobile, fig.cap = "The `Stream` and `Climate` sections will only become visible if you have selected `closed bottom structure` for the  `crossing type` ", out.width='50%', eval=T}
@@ -64,7 +64,7 @@ knitr::include_graphics("fig/fieldwork/more_sections.jpg")
 
   5. While entering information save the form often as glitches can occur which can lead to loosing work.
   
-  6. When you are no longer offline, **[make sure to sync](https://merginmaps.com/docs/field/mobile-app-ui/#sync) your changes!** to the online shared project.
+  6. When you are no longer offline, **[make sure to sync](https://merginmaps.com/docs/field/mobile-app-ui/#sync) your changes** to the online shared project.
 
 <br>
 
@@ -84,17 +84,17 @@ When adding features (sites) to the project map, here are some things to take no
     
   2. If there is no `PSCIS Crossing ID` we use the `Modelled ID` which is the `modelled_crossing_id` filed from the `Crossings - modelled` layer. 
   
-  3. If there is neither a `PSCIS Crossing ID`  or a ``PSCIS Crossing ID`  or a `Modelled ID` (rare but usually occurs when a stream is not mapped correctly) we use a numeric ID based on the date (YYYYMMDD01 - example 2023070502 - would be the second assessment by a field surveyor for the day). It is important to not have duplicate `Modelled ID`s so each surveyor should be assigned their own number series to append to the date for each day (ex. surveyor 1 has 1 - 49 and surveyor 2 has series 50 - 99).
+  3. If there is neither a `PSCIS Crossing ID`  or a `Modelled ID` (rare but usually occurs when a stream is not mapped correctly) we use a numeric ID based on the date (YYYYMMDD01 - example 2023070502 - would be the second assessment by a field surveyor for the day). It is important to not have duplicate `Modelled ID`s so each surveyor should be assigned their own number series to append to the date for each day (ex. surveyor 1 has 1 - 49 and surveyor 2 has series 50 - 99).
   
-  4. If there are associated `MoTi Chris Culvert ID`s (Ministry of Transportation and Infrastructure's own culvert tracking system) we include those in their respective fields as well. These IDs can be found in the `Crossings` gropu within the `MOTi Culverts` layer which can be turned on with the `High Detail - Crossings` layer.  This layer can be helpful for finding crossings that land in spots not located in spots as mapped.
+  4. If there are associated `MoTi Chris Culvert ID`s (Ministry of Transportation and Infrastructure's own culvert tracking system) we include those in their respective fields, found in the Overview section of the form. `MoTi Chris Culvert ID`s can be found in the `Crossings` group within the `MOTi Culverts` layer which can be turned on with the `High Detail - Crossings` layer.  This layer can be helpful for finding crossings that land in spots not located in spots as mapped.
   
 <br>
   
 Always collect the all the information, including the photos, so that we have what we need. If you don't collect some information then write in the assessment comments why it is missing. For example, if you cannot see the inlet of the culvert, take a picture of what you can see and upload it to Mergin then explain in the assessment comments that the inlet was not visible. Same with fields you are not sure of, fill everything out and put details in the assessment comments of what is going on. It's important that each of the photos uploaded be different, using the same photo for more than one section (ex. Outlet photo and Barrel Photo) creates data management issues.
   
-### Assessment Comments
+#### Comments
 
-It's important to write detailed comments in the `Assessment Comments" section of the form. Comments should include everything that will helps characterize the site and justify the habitat ratings given by the surveyor. Some example are:
+It's important to write detailed comments regarding the habitat in the `Comments - habitat quality, number of pipes, etc.` box found in the `Crossing` section of the form (Figure \@ref(fig:comments)). Comments should include everything that will helps characterize the site and justify the habitat ratings given by the surveyor. Some example are:
 
 - justification for habitat value rating (ex. good flow and some gravels present)
 - the condition of the culvert/crossing
@@ -102,15 +102,25 @@ It's important to write detailed comments in the `Assessment Comments" section o
 - Size, number and species (if known) of fish observed 
 - location of the crossing if it was incorrectly mapped
 - reasons for photos taken are not ideal (ex. water too high to see the inlet so it is not clear in the photo)
+- information regarding past restoration work observed
+- adjacent landowner information if applicable. Is the landowner interested in collaborating or do they have valuable knowledge of the stream or crossing?
+
+There are also comment boxes in the `Climate` section of the form which are for climate-related notes regarding the condition of the culvert as well as the climate change risk and priority (Figure \@ref(fig:comments)). These comments are separate from habitat comments mentioned above and used for different purposes in the reporting phase so make sure to not mix these up. 
+
+```{r comments, fig.cap = "Left: Place to write detailed comments regarding the habitat in the `Crossing` section of the form. Right: Place to write climate-related comments in the `Climate` section of the form.", fig.show="hold", out.width= c("49.5%","1%","49.5%"),}
+knitr::include_graphics("fig/fieldwork/hab_comments.jpg")
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics("fig/fieldwork/climate_comments.jpg")
+```
 
   
-### Photos
+#### Photos
 
 Photos are one of the most important pieces of data we collect with the majority of which loaded to our digital field forms. The [Timestamp Camera app](http://www.timestampcamera.com/) is used to take photos (landscape only) in the field. 
 
 <br>
 
-Ensure the current date and time and UTM coordinates are in top right corner of the timestamp app. Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner when in the timestamp app.
+Ensure the current date and time and UTM coordinates are in top right corner of the Timestamp app. Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner when in the timestamp app.
 
 
 ```{r timestamp-settings, fig.cap = "Left: Navigate to the Timestamp settings by pressing the 'clock' icon in the bottom right corner when in the timestamp app. Right: Use these Timestamp settings.", fig.show="hold", out.width= c("49.5%","1%","49.5%")}
@@ -121,12 +131,22 @@ knitr::include_graphics("fig/fieldwork/timestamp_settings.jpg")
 
 <br>
 
-Photos are taken at surveyed crossings and all SIX of the following images are always required: **road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing** (Figure \@ref(fig:photos-mobile)). Take photos on the camera first then add to the digital field form in the photos sections following the instructions below:
+Photos are taken at surveyed crossings and all **SIX** of the following images are always required: **road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing** (Figure \@ref(fig:photos-mobile)). We encourage taking enough photos to have a good understanding of the site, 6 is just the minimum. These photos really come in handy when we are back in the office and need to recall the site. 
+
+<br>
+
+The first photo you take should **always** be of the road with the `PSCIS Crossing ID` or the `Modelled ID` on the site card visible in the corner (or a photo of site card filled in with site name, date, stream name) (Figure \@ref(fig:road-photo)).  This allows for easier sorting of the photos later on back in the office. 
+
+<br>
+
+Take photos on your camera first, then add them to the digital field form in the `Photos` sections of the form, following the instructions below:
 
   1. Navigate to the `Photos` section of the digital field form
-  2. You will see a place to add each photo under the correct name (Ex: Road photo, Barrel Photo, etc)
+  2. You will see a place to add each photo under the correct name (Ex:` Road photo`, `Barrel Photo`, etc)
   3. Add photos` From Gallery`
   4. **Do not use the same photo for more than one section** (Ex: Upstream photo and Inlet Photo) because this creates data management issues.
+  5. Add any additional photos to the appropriate boxes, such as `photo_condition`, `photo_embankment_fill`, `photo_blockage`, and `photo_extra1` etc. 
+  6. After filling in the paper card as backup, take a photo and add it to the `Photo - paper card from gallery for backup` box. This is helpful for QAing the data back in the office.
 
 
 ```{r photos-mobile, fig.cap = "Left: Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form, Right: Examples of six required pohtos.  From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.", fig.show="hold", out.width= c("49.5%","1%","49.5%"), }
@@ -134,27 +154,22 @@ knitr::include_graphics("fig/fieldwork/photos_mobile.jpg")
 knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics("fig/fieldwork/crossing_all.JPG")
 ```
-  
-```{r photos-mobile2, fig.cap = "Under the correct heading (Road photo, Barrel Photo, etc), add each photo 'From Gallery' in the photos section of the digital field form", out.width='50%', eval=F}
 
-knitr::include_graphics("fig/fieldwork/photos_mobile.jpg")
+<br>
+  
+```{r road-photo, fig.cap = "Example of road photo with either the `PSCIS Crossing ID` or the `Modelled ID` on the site card visible in the corner.",out.width='50%'}
+knitr::include_graphics("fig/fieldwork/road_photo.jpg")
 ```
+
 
 <br>
 
 Below are some tips for taking proper photos:
 
-  - Use the TimeStamp app with the correct settings and ALWAYS orient camera landscape when taking photos. This is because of the way the photos are processed for reporting.
-  - The first photo you take should always be of the road with the `site_id` on the site card visible in the corner (or a photo of site card filled in with site name, date, stream name).  This allows sorting of photos based on site for all photos transfered from 
-  the phone to the cloud or hardrive. 
+  - Use the Timestamp app with the correct settings and **always** orient camera landscape when taking photos. This is because of the way the photos are processed for reporting.
   - Include something for scale.  We use ski poles for safety navigating in slippery uneven streambeds and to measure depth so one of the poles can be used for scale in the photos. This can come in very handy for understanding stream and crossing structure characteristics just by reviewing the photos.
-  - It is important to let the App “find” where you are before taking the first photos at a new site.  It can take a few seconds for the app to zoom into the location where you are standing once it is opened.
-  - Closing the app every time you use it will help your phone battery not drain.
-  
-```{r road-photo, fig.cap = "Examples of six required pohtos.  From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.",eval=F}
-knitr::include_graphics("fig/fieldwork/crossing_all.JPG")
-```
-  
+  - It is important to let the Timestamp app “find” where you are before taking the first photos at a new site.  It can take a few seconds for the app to zoom into the location where you are standing once it is opened.
+  - Closing the Timestamp app every time you use it will help your phone battery not drain.
 
 <br>
 
@@ -166,7 +181,7 @@ Ensuring photos are stored and backed up appropriately in case anything goes wro
 
   1. On your phone in your photos app
   2. In Mergin on the digital field forms for each site as explained above
-  3. On a cloud based service such as icloud or google photos, etc. You will likely have to pay for more storage to handle all the photos. Make sure you **sync** your photos to the cloud when are are back in service.
+  3. On a cloud based service such as icloud or Google Photos, etc. You will likely have to pay for more storage to handle all the photos. Make sure you **sync** your photos to the cloud when are are back in service.
   
 Photos should also be taken of the paper field forms at the end of the day. 
 
@@ -191,7 +206,7 @@ maps are organized by watershed group code (ex. BULK is the Bulkley River waters
 
 <br>
 
-In order to navigate using our pdf maps we use [Avenza Maps](https://store.avenza.com/) is key for loading georeferenced pdf field maps from <>. We also add `kml` files of our target sites (taken from safety plans) to `Avenza` to make navigation easy. The paid version is necessary to load many maps at the same time for big projects.
+In order to navigate using our pdf maps we use [Avenza Maps](https://store.avenza.com/) for loading georeferenced pdf field maps. We also add `kml` files of our target sites (taken from safety plans) to `Avenza` to make navigation easy. The paid version is necessary to load many maps at the same time for big projects.
 
 
 <br>
@@ -199,13 +214,3 @@ In order to navigate using our pdf maps we use [Avenza Maps](https://store.avenz
 
 In order to get the pdf maps from the Hillcrest server to our phones we use [Dropbox](https://www.dropbox.com/).  The maps are first 
 downloaded to dropbox - then loaded to the phone through the dropbox app.
-
-```{r}
-# 4. [Garmin BaseCamp](https://www.garmin.com/en-CA/software/basecamp/) is used to move `gpx` files in and out of our gps. We export tracks out of `Basemap` with the track names unchanged and we name the `gpx` files informatively (see screenshot below for example). **Note: The gps units have a little \$150 micro sd card behind the batteries that can come loose, this chip is key to knowing where we are going. Be careful when changing batteries.**
-```
-
-
-
-
-
-
