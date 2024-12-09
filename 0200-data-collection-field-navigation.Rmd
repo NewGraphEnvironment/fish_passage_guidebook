@@ -1,6 +1,9 @@
 # Data Collection and Field Navigation
 
-## Fish passage assessment methods
+## Methods
+
+### Fish Passage {-}
+
 In the field, crossings are assessed for fish passage following the procedures outlined in [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]. 
 
 <br>
@@ -13,8 +16,14 @@ In addition to the methods mentioned above, here are some important things to no
 
 * When measuring channel width and stream gradient, take measurements upstream of crossing because this is the habitat that will be gained if remediation occurs. Take measurements outside of the road corridor, take the average of three channel widths and a slope in the longest possible section. 
 * When filling in the paper form, record crew members and circle the initials of the person who's GPS was used to record the crossing location. This avoids confusion in the data management stage. 
-* For culvert crossings with multiple pipes installed at the same elevation at the outlet, add diameters together.
+* For culvert crossings with multiple pipes installed at the same elevation at the outlet, add the diameters together and make a note in the comments that it was 2 pipes. Don't add the diameters together if the second pipe is an overflow pipe, which is usually installed above the main culvert in case of an overflow event. This is because the diameter of the pipes is used to estimate the crossings flow capacity under normal conditions, not during an overflow or flood event.
+* If there are associated `MoTi Chris Culvert ID`s or `MoTi Major structures` (Ministry of Transportation and Infrastructure's own culvert tracking system) we include those in the `MoTi Chris Culvert ID` fields, found in the `Overview` section of the form. To view these structures on the map, you can find the `MoTi Culverts` and `MoTi major structures` layers in the `Crossings` group, which can be turned on with the `High Detail - Crossings` theme or by hand.  The `MoTi Culverts` layer can be helpful for finding crossings that land in spots not located as mapped.
 * If the crossing is an obvious barrier and the stream habitat appears high value, make a note that this location could be a high priority for follow up and a habitat confirmation.
+
+<br>
+
+Always collect all the information, including the photos, so that we have what we need. If you don't collect some information then write in the assessment comments why it is missing. For example, if you cannot see the inlet of the culvert, take a picture of what you can see and upload it to Mergin then explain in the assessment comments that the inlet was not visible. Same with fields you are not sure of, fill everything out and put details in the assessment comments of what is going on.
+ 
 
 <br>
 
@@ -25,6 +34,82 @@ knitr::include_graphics("fig/fieldwork/methods_mobile.jpg")
 ```
 
 
+### Habitat Confirmations {-}
+
+When a site looks like a promising candidate for replacement, we will do a more thorough assessment called a Habitat Confirmation following the guidelines outlined in [A Checklist for Fish Habitat Confirmation Prior to the Rehabilitation of a Stream Crossing](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/checklist-for-fish-habitat-confirmation-201112.pdf) [@fishpassagetechnicalworkinggroup2011ChecklistFisha], and [FHAP Procedures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/recce2c.pdf) [@resourceinventorystandardscommittee2001Reconnaissance20]. 
+
+<br>
+
+We use our digital field form called `Form Fiss Site` to record habitat data, which is an adapted version of the [FISS Site Card](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/scf.pdf) [@ministryofenvironment2001SiteCarda]. The FISS Site Card field guide can be found [here](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/sitecard20.pdf) [@ministryofenvironment2008Reconnaissance20a]. In addition to the above methods, here are some important things to note when conducting a Habitat Confirmation:
+
+  * In the form under `Site Name`, record the `PSCIS Crossing ID` or `Modelled ID` followed by an underscore and `us` or `ds`, indicating if the survey was done upstream or downstream of the crossing (ex: `12345_us`).
+  * Ensure **at least** three wetted and channel widths are taken, but aim for 5-6.
+  * Using your GPS, mark a waypoint at the bottom of your site and record the site length by measuring the distance between the start and end of survey.
+  * Survey upstream of crossing for a minimum of 600m, and downstream a minimum of 300m.
+  * Take lots of photos using Timestamp. Photograph features/obstacles if present, gravels, pools, or any other photos of the stream that will help tell the story. Put a walking pole in your picture to help get an idea of the scale. Include your boot in gravel pictures for scale. 
+  * Make sure to record comments regarding:
+      - stream habitat
+      - presence of natural barriers 
+      - fish sightings 
+      - presence of spawning gravels
+      - presence of deep pools 
+
+<br>
+
+### Fish Sampling {-}
+
+Fish sampling is conducted at sites when biological data is considered to add significant value to the physical habitat assessment information. We use the `Form Fiss Site` at fish sample sites to record habitat data. Additionally, we also fill out a paper Fish Site card to record electrofisher and individual fish information.
+
+<br>
+
+Most often we utilize electrofishing for fish sampling and follow stream inventory standards and procedures found in [Reconnaissance (1:20 000) Fish and Fish Habitat Inventory Manual](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/recce2c.pdf) [@resourcesinventorycommittee2001Reconnaissance20a].
+
+<br>
+
+ We use the [Field Key to Freshwater Fished of BC](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/field_key_to_freshwater_fishes_of_bc_field_size_water_resistant_version.pdf) [@mcphail_carveth1993FieldKey] to identify fish.
+
+<br>
+ 
+In the `Form Fiss Site`, here are some things to take note of:
+
+  * In the form under `Site Name`, record the `PSCIS Crossing ID` or `Modelled ID` followed by an underscore and `us` or `ds` and `_ef#` indicating if the site is upstream or downstream and what the sample site number is (ex: `12345_us_ef1`).
+  * Fill out a new `Form Fiss Site` and paper habitat site card for every electrofishing site. At minimum, the following data should be recorded at each site:
+      - site start and end locations (with GPS and flagging tape)
+      - site length
+      - water quality (temperature, conductivity, turbidity, and pH)
+      - stream wetted widths (at least 3)
+      - habitat comments
+    
+<br>
+
+On the paper Fish Site card:
+
+  * Record the electrofisher settings, including the voltage, frequency, and seconds elapsed during each sample site.
+  * Record if the site was enclosed (stop nets at boths ends), partially enclosed (stop net at one end), or open (no stop nets).
+  * For each fish, record the species, fork length in millimeters, and weight. 
+  * Most fish that are over 60mm long also get a PIT tag, see the section below on [PIT Tagging]. When recording the `PIT tag ID`, record the complete tag ID for the first fish and then only record the last 3 digits/letters for the rest. This is because only the last 3 digits/letters change within the same box of tags, so we can save time by just recording the last 3. When you open a new box of PIT tags, don't forget to record the complete tag number again!  
+  * Also record the PIT `tag row ID` for each fish. 
+  * Take photos of fish using the Timestamp app, and record the exact time of the photo on the Fish Site card. This will make it easier to identify fish later on. If unable to identify the species, it is important to take a photo and review field id guides later.  
+ 
+
+### PIT Tagging {-}
+
+Fish with a fork length greater than 60 mm and belonging to species approved under the scientific fish collection permit for the given project are tagged with Passive Integrated Transponders (PIT tags) using the [Abdominal Cavity](https://www.youtube.com/watch?v=9CKZ9yaS5o8) method outlined by Biomark.
+
+<br>
+
+Pit tagging can be harmful to fish if done incorrectly. We want to do our best job so fish get tagged as safely as possible. Please read these instructions thoroughly:
+
+  1. To anesthetize fish prior to pit tagging, we use a solution of approximately 0.1 mL of clove oil per 1 L of water (1:10,000). This concentration was selected for its efficiency in providing effective sedation with minimal residual effects, making it ideal for studies in which fish are released back into their natural habitats [@fernandes_etal2017efficacyclove]. The clove oil solution should be prepared in advance by dissolving pure clove oil in ethyl alcohol in a 1:9 ratio (clove oil: ethyl alcohol) to enhance solubility, then mixed into the water bucket [@fernandes_etal2017efficacyclove]. 
+  
+  2. Place fish into the bucket with clove until they have reached an appropriate level of anesthesia for handling. Be mindful of how long the fish remain in the clove bucket. If you have a large number of fish, only place half or a third of them in the bucket at a time, or even fewer if you're still learning to tag fish and need extra time.
+  3. Ensure the needle is loaded with a tag before grabbing the fish, then insert the PIT tag following the instructions outlined in the [Abdominal Cavity](https://www.youtube.com/watch?v=9CKZ9yaS5o8) methods. Be very careful when handling the needle. Do not insert the needle too deep, but ensure the tag is inserted parallel to the body of the fish, just underneath the skin. 
+  4. After tagging the fish, scan it with the PIT reader, and record the last 3 digits/letters of the `PIT tag ID` and the complete `tag row ID`. 
+  5. Finally, place the fish into a bucket of fresh water where they can recover before being released back into the stream.
+  6. Change out needles roughly every 10 fish, they will wear out and it will become more difficult to penetrate the skin, potentially causing injury to the fish. 
+  
+<br>
+
 ## Digital field forms 
 
 [Mergin Maps](https://merginmaps.com/) is a geodata platform that allows us to collaborate with others by collecting data in the field and syncing to a shared QGIS project [@merginmaps2023mergin]. Check out the [Mergin Maps documentation](https://merginmaps.com/docs/) for more information.
@@ -33,7 +118,7 @@ knitr::include_graphics("fig/fieldwork/methods_mobile.jpg")
 
 We use Mergin Maps on our phones to locate sites, understand watershed/land values and collect data through our digital field forms. Once downloaded to a phone - wifi or cell service is not required to view maps and collect data. Also of note - it is not required to have the project downloaded on a laptop to see/use them on the phone - only a Mergin account with access to the `newgraph` workspace is necessary.
 
-### Set up
+### Set up {-}
 
 Setting up Mergin Maps on a phone requires a wifi or cell connection:
 
@@ -44,7 +129,7 @@ Setting up Mergin Maps on a phone requires a wifi or cell connection:
   5. Switch to the `newgraph` workspace following [these instructions](https://merginmaps.com/docs/manage/workspaces/#how-to-switch-between-workspaces).
   
 
-### Using Mergin on a mobile device
+### Using Mergin on a mobile device {-}
 
 Although use in the field does not require wifi or cell service, there are actions that require an internet connection such as switching accounts, downloading projects from the cloud, synchronising changes to the cloud, and displaying online background maps (ex. google imagery). Use the following instructions to **download your projects before you head out into the field!**
 
@@ -58,7 +143,7 @@ Although use in the field does not require wifi or cell service, there are actio
   5. Know how to [exit](https://merginmaps.com/docs/field/mobile-app-ui/#more-options-zoom-to-project-map-themes-position-tracking-local-changes-setting) a Project.
 
 
-### Field Data Entry into Mergin
+### Field Data Entry into Mergin {-}
 Follow the [instructions to add a feature to a specific layer](https://merginmaps.com/docs/field/mobile-app-ui/#add) and the
 guidance below to add fish passage assessment data to the project:
 
@@ -86,7 +171,7 @@ When adding features (sites) to the project map, here are some things to take no
   - Switching between themes can be very useful for seeing different levels of detail in the field. The most common theme when navigating to sites in the field is: `Low detail - {Species} Model` with other more detailed themes (ex. `High Detail - Crossings`) used when researching background information for the site (ex. species upstream, MoTi Culvert ID)
 
 
-#### Site Identification
+#### Site Identification {-}
   - The identification of each site is important for workflow data processing and necessarily a bit complicated.  It involves one of either `PSCIS Crossing ID` or a `Modelled ID`.  There can also be multiple `MoTi Chris Culvert ID`s for each site:
 
   1. If a site has a `PSCIS Crossing ID` (`stream_crossing_id` within the `Crossings - PSCIS assessment` layer)  then that is used as the identifier. 
@@ -95,15 +180,12 @@ When adding features (sites) to the project map, here are some things to take no
   
   3. If there is neither a `PSCIS Crossing ID`  or a `Modelled ID` (rare but usually occurs when a stream is not mapped correctly) we use a numeric ID based on the date (YYYYMMDD01 - example 2023070502 - would be the second assessment by a field surveyor for the day). It is important to not have duplicate `Modelled ID`s so each surveyor should be assigned their own number series to append to the date for each day (ex. surveyor 1 has 1 - 49 and surveyor 2 has series 50 - 99).
   
-  4. If there are associated `MoTi Chris Culvert ID`s or `MoTi Major structures` (Ministry of Transportation and Infrastructure's own culvert tracking system) we include those in the `MoTi Chris Culvert ID` fields, found in the `Overview` section of the form. To view these structures on the map, you can find the `MoTi Culverts` and `MoTi major structures` layers in the `Crossings` group, which can be turned on with the `High Detail - Crossings` theme or by hand.  The `MoTi Culverts` layer can be helpful for finding crossings that land in spots not located as mapped.
-  
 <br>
   
-Always collect the all the information, including the photos, so that we have what we need. If you don't collect some information then write in the assessment comments why it is missing. For example, if you cannot see the inlet of the culvert, take a picture of what you can see and upload it to Mergin then explain in the assessment comments that the inlet was not visible. Same with fields you are not sure of, fill everything out and put details in the assessment comments of what is going on. It's important that each of the photos uploaded be different, using the same photo for more than one section (ex. Outlet photo and Barrel Photo) creates data management issues.
-  
-#### Comments
 
-It's important to write detailed comments regarding the habitat in the `Comments - habitat quality, number of pipes, etc.` box found in the `Crossing` section of the form (Figure \@ref(fig:comments)). Comments should include everything that will helps characterize the site and justify the habitat ratings given by the surveyor. Some example are:
+#### Comments {-}
+
+It's important to write detailed comments regarding the habitat in the `Comments - habitat quality, number of pipes, etc.` box found in the `Crossing` section of the form (Figure \@ref(fig:comments)). Comments should include everything that will help characterize the site and justify the habitat ratings given by the surveyor. Some example are:
 
 - justification for habitat value rating (ex. good flow and some gravels present)
 - the condition of the culvert/crossing
@@ -117,7 +199,9 @@ It's important to write detailed comments regarding the habitat in the `Comments
 - adjacent landowner information if applicable. Is the landowner interested in collaborating or do they have valuable knowledge of the stream or crossing?
 - reasons for photos taken are not ideal (ex. water too high to see the inlet so it is not clear in the photo)
 
-There are also comment boxes in the `Climate` section of the form which are for climate-related notes regarding the condition of the culvert as well as the climate change risk and priority (Figure \@ref(fig:comments)). These comments are separate from habitat comments mentioned above and used for different purposes in the reporting phase so make sure to not mix these up. 
+<br>
+
+There are also comment boxes in the `Climate` section of the form which are for climate-related notes regarding the condition of the crossing as well as the climate change risk and priority (Figure \@ref(fig:comments)). These comments are separate from habitat comments mentioned above and used for different purposes in the reporting phase so make sure to not mix these up. 
 
 ```{r comments, fig.cap = "Left: Place to write detailed comments regarding the habitat in the `Crossing` section of the form. Right: Place to write climate-related comments in the `Climate` section of the form.", fig.show="hold", out.width= c("49.5%","1%","49.5%"),}
 knitr::include_graphics("fig/fieldwork/hab_comments.jpg")
@@ -126,7 +210,7 @@ knitr::include_graphics("fig/fieldwork/climate_comments.jpg")
 ```
 
   
-#### Photos
+#### Photos {-}
 
 Photos are one of the most important pieces of data we collect with the majority of which loaded to our digital field forms. The [Timestamp Camera app](http://www.timestampcamera.com/) is used to take photos (landscape only) in the field. 
 
@@ -146,6 +230,7 @@ knitr::include_graphics("fig/fieldwork/timestamp_settings.jpg")
 Photos are taken at surveyed crossings and all **SIX** of the following images are always required: **road, crossing inlet, crossing outlet, crossing barrel, channel downstream and channel upstream of the crossing** (Figure \@ref(fig:photos-mobile)). We encourage taking enough photos to have a good understanding of the site, 6 is just the minimum. These photos really come in handy when we are back in the office and need to recall the site. 
 
 <br>
+
 
 The first photo you take should **always** be of the road with the `PSCIS Crossing ID` or the `Modelled ID` on the site card visible in the corner (or a photo of site card filled in with site name, date, stream name) (Figure \@ref(fig:road-photo)).  This allows for easier sorting of the photos later on back in the office. 
 
@@ -186,7 +271,7 @@ Below are some tips for taking proper photos:
 <br>
 
 
-#### Backups
+#### Backups {-}
 
 Ensuring photos are stored and backed up appropriately in case anything goes wrong is very important. Photos should also be taken of the paper field forms at the end of the day. We store photos in 3 places:
 
@@ -196,7 +281,7 @@ Ensuring photos are stored and backed up appropriately in case anything goes wro
   
 <br>
 
-**[Make sure to sync](https://merginmaps.com/docs/field/mobile-app-ui/#sync) your changes** your Mergin Maps as often as possible or whenever to get back into cell service.
+**[Make sure to sync](https://merginmaps.com/docs/field/mobile-app-ui/#sync)** your Mergin Maps as often as possible or whenever to get back into cell service.
 
 
 ## Phone and battery management
