@@ -8,7 +8,7 @@ In the field, crossings are assessed for fish passage following the procedures o
 
 <br>
 
-We have developed a digital field form (adapted version of the [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments] that can and should be used to collect this data in the field. Our digital field form is our primary tool for data collection and contains a high level of detail, however its still undergoing development, so we are currently minimally populating a paper form as well to ensure we have the data in case of a digital failure.
+We have developed a digital field form called `Form PSCIS` (an adapted version of the [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments] that can and should be used to collect this data in the field. Our digital field form is our primary tool for data collection and contains a high level of detail, however its still undergoing development, so we are currently minimally populating a paper form as well to ensure we have the data in case of a digital failure.
 
 <br>
 
@@ -33,6 +33,7 @@ There is a link to the [Field Assessment for Determining Fish Passage Status of 
 knitr::include_graphics("fig/fieldwork/methods_mobile.jpg")
 ```
 
+<br>
 
 ### Habitat Confirmations {-}
 
@@ -40,9 +41,9 @@ When a site looks like a promising candidate for replacement, we will do a more 
 
 <br>
 
-We use our digital field form called `Form Fiss Site` to record habitat data, which is an adapted version of the [FISS Site Card](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/scf.pdf) [@ministryofenvironment2001SiteCarda]. The FISS Site Card field guide can be found [here](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/sitecard20.pdf) [@ministryofenvironment2008Reconnaissance20a]. In addition to the above methods, here are some important things to note when conducting a Habitat Confirmation:
+We use our digital field form called `Form Fiss Site` to record habitat data, which is an adapted version of the [FISS Site Card](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/scf.pdf) [@ministryofenvironment2001SiteCarda] and includes methods from the [FISS Site Card Field Guide](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/sitecard20.pdf) [@ministryofenvironment2008Reconnaissance20a]. In addition to the above methods, here are some important things to note when conducting a Habitat Confirmation:
 
-  * In the form under `Site Name`, record the `PSCIS Crossing ID` or `Modelled ID` followed by an underscore and `us` or `ds`, indicating if the survey was done upstream or downstream of the crossing (ex: `12345_us`).
+  * In the `Form Fiss Site` under `Site Name`, record the `PSCIS Crossing ID` or `Modelled ID` (see [Site Identification] to determine which one) followed by an underscore and `us` or `ds`, indicating if the survey was done upstream or downstream of the crossing (ex: `12345_us`). 
   * Ensure **at least** three wetted and channel widths are taken, but aim for 5-6.
   * Using your GPS, mark a waypoint at the bottom of your site and record the site length by measuring the distance between the start and end of survey.
   * Survey upstream of crossing for a minimum of 600m, and downstream a minimum of 300m.
@@ -58,21 +59,21 @@ We use our digital field form called `Form Fiss Site` to record habitat data, wh
 
 ### Fish Sampling {-}
 
-Fish sampling is conducted at sites when biological data is considered to add significant value to the physical habitat assessment information. We use the `Form Fiss Site` at fish sample sites to record habitat data. Additionally, we also fill out a paper Fish Site card to record electrofisher and individual fish information.
+Fish sampling is conducted at sites when biological data is considered to add significant value to the physical habitat assessment information. We use the `Form Fiss Site` at fish sample sites to record habitat data. Additionally, we also fill out a paper Fish Site card to record electrofisher settings and individual fish information.
 
 <br>
 
-Most often we utilize electrofishing for fish sampling and follow stream inventory standards and procedures found in [Reconnaissance (1:20 000) Fish and Fish Habitat Inventory Manual](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/recce2c.pdf) [@resourcesinventorycommittee2001Reconnaissance20a].
+Most often we utilize electrofishing for fish sampling and follow the standards and procedures found in [Fish Collection Methods and Standards](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/fishml04.pdf) [@resourcesinventorycommittee1997FishCollection] and [Reconnaissance (1:20 000) Fish and Fish Habitat Inventory Manual](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/recce2c.pdf) [@resourcesinventorycommittee2001Reconnaissance20a].
 
 <br>
 
- We use the [Field Key to Freshwater Fished of BC](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/field_key_to_freshwater_fishes_of_bc_field_size_water_resistant_version.pdf) [@mcphail_carveth1993FieldKey] to identify fish.
+ We use the [Field Key to Freshwater Fishes of BC](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/field_key_to_freshwater_fishes_of_bc_field_size_water_resistant_version.pdf) [@mcphail_carveth1993FieldKey] to identify fish.
 
 <br>
  
 In the `Form Fiss Site`, here are some things to take note of:
 
-  * In the form under `Site Name`, record the `PSCIS Crossing ID` or `Modelled ID` followed by an underscore and `us` or `ds` and `_ef#` indicating if the site is upstream or downstream and what the sample site number is (ex: `12345_us_ef1`).
+  * In the form under `Site Name`, record the `PSCIS Crossing ID` or `Modelled ID` (see [Site Identification] to determine which one) followed by an underscore and `us` or `ds` and `_ef#` indicating if the site is upstream or downstream and what the sample site number is (ex: `12345_us_ef1`).
   * Fill out a new `Form Fiss Site` and paper habitat site card for every electrofishing site. At minimum, the following data should be recorded at each site:
       - site start and end locations (with GPS and flagging tape)
       - site length
@@ -91,6 +92,7 @@ On the paper Fish Site card:
   * Also record the PIT `tag row ID` for each fish. 
   * Take photos of fish using the Timestamp app, and record the exact time of the photo on the Fish Site card. This will make it easier to identify fish later on. If unable to identify the species, it is important to take a photo and review field id guides later.  
  
+ <br>
 
 ### PIT Tagging {-}
 
@@ -112,11 +114,25 @@ Pit tagging can be harmful to fish if done incorrectly. We want to do our best j
 
 ## Digital field forms 
 
-[Mergin Maps](https://merginmaps.com/) is a geodata platform that allows us to collaborate with others by collecting data in the field and syncing to a shared QGIS project [@merginmaps2023mergin]. Check out the [Mergin Maps documentation](https://merginmaps.com/docs/) for more information.
+We have developed several digital field forms that can and should be used to collect data in the field. The digital field forms are our primary tool for data collection and contains a high level of detail, however they are still undergoing development, so we are currently minimally populating a paper form as well to ensure we have the data in case of a digital failure.
 
 <br>
 
-We use Mergin Maps on our phones to locate sites, understand watershed/land values and collect data through our digital field forms. Once downloaded to a phone - wifi or cell service is not required to view maps and collect data. Also of note - it is not required to have the project downloaded on a laptop to see/use them on the phone - only a Mergin account with access to the `newgraph` workspace is necessary.
+Our digital field forms are built with QGIS and accessed through [Mergin Maps](https://merginmaps.com/), which is a geodata platform that allows us to collaborate with others by collecting data in the field and syncing to a shared QGIS project [@merginmaps2023mergin]. We also use the Mergin Maps app to view QGIS projects while in the field which allows us to locate sites and understand watershed/land values.  Check out the [Mergin Maps documentation](https://merginmaps.com/docs/) for more information.
+
+<br>
+
+We currently have 3 digital field forms:
+
+  - `Form PSCIS` is used to for [Fish Passage] assessment data collection
+  - `Form FISS Site` is used for [Habitat Confirmations] and [Fish Sampling] site data collection
+  - `Form Monitoring` is used for Monitoring data collection (currently only found in certain project)
+
+<br>
+
+Once downloaded to a phone - wifi or cell service is not required to view maps and collect data. Also of note - it is not required to have the project downloaded on a laptop to see/use them on the phone - only a Mergin account with access to the `newgraph` workspace is necessary.
+
+<br>
 
 ### Set up {-}
 
@@ -128,13 +144,14 @@ Setting up Mergin Maps on a phone requires a wifi or cell connection:
   4. We will receive an invitation to join the `newgraph` Mergin workspace.
   5. Switch to the `newgraph` workspace following [these instructions](https://merginmaps.com/docs/manage/workspaces/#how-to-switch-between-workspaces).
   
+<br>
 
 ### Using Mergin on a mobile device {-}
 
 Although use in the field does not require wifi or cell service, there are actions that require an internet connection such as switching accounts, downloading projects from the cloud, synchronising changes to the cloud, and displaying online background maps (ex. google imagery). Use the following instructions to **download your projects before you head out into the field!**
 
 
-  1. Navigate to the Projects tab following the [instructions here](https://merginmaps.com/docs/field/mobile-app-ui/#projects).
+  1. Navigate to the `Projects` tab following the [instructions here](https://merginmaps.com/docs/field/mobile-app-ui/#projects).
   2. Download the project you want to view. You will need at least 2GB of storage on your phone to download a project. Once downloaded, tap the project name to open.
   3. [View the different themes](https://merginmaps.com/docs/field/mobile-app-ui/#more-options-zoom-to-project-map-themes-position-tracking-local-changes-settings) available. 
   4. [View the available layers](https://merginmaps.com/docs/field/mobile-app-ui/#layers). You will only see one layer visible, `bcfishpass Mobile`, which contains all our layers grouped into categories. Click `bcfishpass Mobile` to view the categories, such as `Crossings`, `Forms`, `Project Specific`. Some category contains sub-categories, so have a look around to see all the available layers. Toggle a layer to turn it on or off on the map.
@@ -142,10 +159,11 @@ Although use in the field does not require wifi or cell service, there are actio
   
   5. Know how to [exit](https://merginmaps.com/docs/field/mobile-app-ui/#more-options-zoom-to-project-map-themes-position-tracking-local-changes-setting) a Project.
 
+<br>
 
 ### Field Data Entry into Mergin {-}
 Follow the [instructions to add a feature to a specific layer](https://merginmaps.com/docs/field/mobile-app-ui/#add) and the
-guidance below to add fish passage assessment data to the project:
+guidance below to add fish passage assessment data to `Form PSCIS`:
 
   1. Ensure you are at the location of the culvert before adding the feature to `Form PSCIS`. 
   2. Tap `record` at the bottom of the screen.
@@ -170,9 +188,10 @@ When adding features (sites) to the project map, here are some things to take no
   
   - Switching between themes can be very useful for seeing different levels of detail in the field. The most common theme when navigating to sites in the field is: `Low detail - {Species} Model` with other more detailed themes (ex. `High Detail - Crossings`) used when researching background information for the site (ex. species upstream, MoTi Culvert ID)
 
+<br>
 
 #### Site Identification {-}
-  - The identification of each site is important for workflow data processing and necessarily a bit complicated.  It involves one of either `PSCIS Crossing ID` or a `Modelled ID`.  There can also be multiple `MoTi Chris Culvert ID`s for each site:
+  - The identification of each site is important for workflow data processing and necessarily a bit complicated.  It involves one of either `PSCIS Crossing ID` or a `Modelled ID`:
 
   1. If a site has a `PSCIS Crossing ID` (`stream_crossing_id` within the `Crossings - PSCIS assessment` layer)  then that is used as the identifier. 
     
@@ -209,6 +228,7 @@ knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics("fig/fieldwork/climate_comments.jpg")
 ```
 
+  <br>
   
 #### Photos {-}
 
