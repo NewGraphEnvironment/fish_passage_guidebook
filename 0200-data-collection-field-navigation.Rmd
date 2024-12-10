@@ -37,7 +37,7 @@ knitr::include_graphics("fig/fieldwork/methods_mobile.jpg")
 
 ### Habitat Confirmations {-}
 
-When a site looks like a promising candidate for replacement, we will do a more thorough assessment called a Habitat Confirmation following the guidelines outlined in [A Checklist for Fish Habitat Confirmation Prior to the Rehabilitation of a Stream Crossing](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/checklist-for-fish-habitat-confirmation-201112.pdf) [@fishpassagetechnicalworkinggroup2011ChecklistFisha], and [FHAP Procedures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/recce2c.pdf) [@resourceinventorystandardscommittee2001Reconnaissance20]. 
+When a site looks like a promising candidate for replacement, we will do a more thorough assessment called a Habitat Confirmation following the guidelines outlined in [A Checklist for Fish Habitat Confirmation Prior to the Rehabilitation of a Stream Crossing](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/checklist-for-fish-habitat-confirmation-201112.pdf) [@fishpassagetechnicalworkinggroup2011ChecklistFisha]. 
 
 <br>
 
@@ -112,7 +112,7 @@ Pit tagging can be harmful to fish if done incorrectly. We want to do our best j
   
 <br>
 
-## Digital field forms 
+## Digital Field Forms 
 
 We have developed several digital field forms that can and should be used to collect data in the field. The digital field forms are our primary tool for data collection and contains a high level of detail, however they are still undergoing development, so we are currently minimally populating a paper form as well to ensure we have the data in case of a digital failure.
 
@@ -146,7 +146,7 @@ Setting up Mergin Maps on a phone requires a wifi or cell connection:
   
 <br>
 
-### Using Mergin on a mobile device {-}
+### Using Mergin on a Mobile Device {-}
 
 Although use in the field does not require wifi or cell service, there are actions that require an internet connection such as switching accounts, downloading projects from the cloud, synchronising changes to the cloud, and displaying online background maps (ex. google imagery). Use the following instructions to **download your projects before you head out into the field!**
 
@@ -291,12 +291,12 @@ Below are some tips for taking proper photos:
 <br>
 
 
-#### Backups {-}
+#### Data Backups {-}
 
-Ensuring photos are stored and backed up appropriately in case anything goes wrong is very important. Photos should also be taken of the paper field forms at the end of the day. We store photos in 3 places:
+Ensuring photos are stored and backed up appropriately in case anything goes wrong is very important. Additionally, we photograph all field cards (in the order that the cards were filled) at the end of each workday for backup purposes. These photos should be backed up in 3 places:
 
   1. On your phone in your photos app
-  2. In Mergin on the digital field forms for each site as explained above
+  2. In Mergin in the digital field form for each site as explained in the [Photos] section
   3. On a cloud based service such as icloud or Google Photos, etc. You will likely have to pay for more storage to handle all the photos. Make sure you **sync** your photos to the cloud when are are back in service.
   
 <br>
@@ -304,7 +304,7 @@ Ensuring photos are stored and backed up appropriately in case anything goes wro
 **[Make sure to sync](https://merginmaps.com/docs/field/mobile-app-ui/#sync)** your Mergin Maps as often as possible or whenever to get back into cell service.
 
 
-## Phone and battery management
+## Phone and Battery Management
 
 - Your phone needs to be mounted on a secure mount on the dash of your vehicle so you can see the phone while driving. 
 - Always plug in your phone when driving so it can charge. 
@@ -313,7 +313,33 @@ Ensuring photos are stored and backed up appropriately in case anything goes wro
 - Make sure you have enough storage available to take lots of photos!
 
   
-## Backup Maps for Field Navigation
+## Field Navigation
+
+We aim to be as efficient as possible in the field, and navigating to sites can take up a lot of time. Before heading out, we plan which sites to visit and how to access them. Mergin Maps is our go-to tool for navigation since within our projects, we can see all the assessed PSCIS crossings and Modelled crossings right in the app.
+
+<br>
+
+The second tool we rely on is our GPS. We load all planned sites onto the GPS using the `gpx` file linked in the project safety plan. An example can be found [here](https://github.com/NewGraphEnvironment/safety_plan_skeena_2024/blob/main/docs/sites_sern-skeena-fish-passage_20240914_kml_gpx.zip).
+
+<br>
+
+### GPS Management {-}
+
+In addition to navigation, the GPS is used to mark waypoints at each site and track where we go throughout the day. Here are some important things to keep in mind:
+
+  * Please record GPS data (waypoint numbers or timesstamps) on all field cards and circle the initials of the surveyor whose track is referenced for the work.  This is important for cross referencing data and location.
+  * Please run track on the GPS during all field work at all times. Set the track recording interval to 10 seconds.
+  * The GPS automatically wraps tracks after a certain size (ex. 2021-07-27 15:59:35 Auto) sp do not manually save different tracks on the GPS — fewer tracks make data management easier.
+  * **Note: The gps units have a little \$150 micro sd card behind the batteries that can come loose, this chip is key to knowing where we are going. Be careful when changing batteries.**
+  
+<br>
+  
+At the end of each field day, we download the `Current Track` off the GPS using [Garmin BaseCamp](https://www.garmin.com/en-CA/software/basecamp/). To streamline this process, we use a script called `gps.R`. An example script can be found [here](https://github.com/NewGraphEnvironment/fish_passage_peace_2023_reporting/blob/25662f695f8a8b33a11791d58f1a4a70d9dcb1d3/scripts/01_prep_inputs/gps.R). Please see [GPS - import waypoints and tracks](https://github.com/NewGraphEnvironment/fish_passage_guidebook/issues/10) for more information regarding downloading the GPS tracks.  
+
+<br>
+
+### Backup Maps {-}
+
 We want to get the job done no matter what. In many areas that we work we have backup pdf maps that allow us to navigate
 to sites regardless of whether Mergin is operational or not (usually is but every once in a while technical challenges can occur).
 
@@ -326,9 +352,27 @@ maps are organized by watershed group code (ex. BULK is the Bulkley River waters
 
 In order to navigate using our pdf maps we use [Avenza Maps](https://store.avenza.com/) for loading georeferenced pdf field maps. We also add `kml` files of our target sites (taken from safety plans) to `Avenza` to make navigation easy. The paid version is necessary to load many maps at the same time for big projects.
 
-
 <br>
-
 
 In order to get the pdf maps from the Hillcrest server to our phones we use [Dropbox](https://www.dropbox.com/).  The maps are first 
 downloaded to dropbox - then loaded to the phone through the dropbox app.
+
+
+## Resources
+
+ - [Field Assessment for Determining Fish Passage Status of Closed Bottom Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) - Methods for determining fish passage status of closed bottom structures [@fish_passage_assessments].
+ 
+ <!-- Not sure where this should go yet -->
+ <!-- Note that we have a table that we can call from fpr (see the [fpr repo](https://github.com/NewGraphEnvironment/fpr) for how to load the package from github) using `fpr::xref_names_pscis` that ties the column names from the `whse_fish.pscis_assessment_svw` to the `janitor::clean_names` version of the column names for PSCIS input excel template to the names we use in the tables of our reports. -->
+ 
+- [A Checklist for Fish Habitat Confirmation Prior to the Rehabilitation of a Stream Crossing](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/checklist-for-fish-habitat-confirmation-201112.pdf) - Includes the methods used for Habitat Confirmation assessments [@confirmation_checklist_2011].
+
+- [FHAP Procedures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/recce2c.pdf) - Standards for Reconnaissance (1:20 000) Fish and Fish Habitat Inventory for British Columbia. These methods are much more detailed and are typically used when there is significantly more time available to collect data [@resourceinventorystandardscommittee2001Reconnaissance20].
+
+- [FISS Site Card](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/scf.pdf) - Site card used for fish habitat data collection [@ministryofenvironment2001SiteCarda].
+
+- [FISS Card Methods](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/sitecard20.pdf) - Site card methods for fish and fish habitat inventory [@ministryofenvironment2008Reconnaissance20a].
+
+- [Fish Collection Methods and Standards](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/fishml04.pdf) - Includes procedures for electrofishing and minnowtrapping [@resourcesinventorycommittee1997FishCollection].
+
+- [Field Key to the Freshwater Fishes of BC](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/nr-laws-policy/risc/field_key_to_freshwater_fishes_of_bc_field_size_water_resistant_version.pdf) - The fish ID guide we currently use [@mcphail_carveth1993FieldKey].
