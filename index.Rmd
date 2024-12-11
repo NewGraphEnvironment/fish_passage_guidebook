@@ -17,6 +17,7 @@ output:
   bookdown::gitbook:
           includes:
             in_header: header.html
+          toc_depth: 3
 params:
   repo_url: 'https://github.com/NewGraphEnvironment/fish_passage_guidebook/'
   report_url: 'https://newgraphenvironment.github.io/fish_passage_guidebook'
