@@ -9,8 +9,6 @@ and external capacity for restoration using fish passage as an excuse to look at
 This document is currently not even close to complete, extremely rough and likely contains errors. Please refer to provincial methods for data to be submitted to the province as our workflows are intended to complement these methods vs replace them. We have many online interactive reports that can illustrate how we use this data and they can be found in links at the top right corner of individual 
 repositories that can be found [here](https://github.com/NewGraphEnvironment?tab=repositories&q=reporting&type=&language=&sort=).
 
-  * [Field Assessment for Determining Fish Passage Status of Closed Bottomed Structures](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/field-assessment-for-determining-fish-passage-status-of-cbs.pdf) [@fish_passage_assessments]
-  * [A Checklist for Fish Habitat Confirmation Prior to the Rehabilitation of a Stream Crossing](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/checklist-for-fish-habitat-confirmation-201112.pdf) [@confirmation_checklist_2011]
-  * [Reconnaissance (1:20,000) Fish and Fish Habitat Inventory: Site Card Field Guide](https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/laws-policies-standards-guidance/inventory-standards/aquatic-ecosystems)
+<br>
 
 The sections started to date include a bit about field data collection, navigation and using GIS to understand site context but future sections can include more about data management, data analysis, software tools, habitat modelling, reporting, and how to use the data for decision making.

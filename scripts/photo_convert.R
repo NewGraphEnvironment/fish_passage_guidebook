@@ -3,7 +3,10 @@ photos <- c("timestamp_settings_access.jpg",
             "timestamp_settings.jpg",
             "methods_mobile.jpg",
             "more_sections.jpg",
-            "photos_mobile.jpg")
+            "photos_mobile.jpg",
+            "road_photo.jpg",
+            "hab_comments.jpg",
+            "climate_comments.png")
 
 paths <- paste0(
   fs::path(here::here(),  "fig", "fieldwork", photos)
