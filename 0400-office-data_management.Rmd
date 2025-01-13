@@ -2,13 +2,15 @@
 
 ## Data Management
 
--   All fish passage data is inputted into the appropriate provincial submission templates (make sure you have latest version). It is very important to use only `copy+paste+special values` (right click or `control + command + V`) as there are "standards" in the input spreadsheets that can be violated with regular copy paste leading to issues later on in the submssion process.
+Once we are back in the office we:
 
-We are looking to minimize hand work as it is time consuming, leads to errors and does not lend itself to reproducibility. In addition, we are continually improving our digital input forms so issues that do not allow the data to be transferred simply between digital forms and provincial templates should be dealt with through issues to [`dff-2022`](https://github.com/NewGraphEnvironment/dff-2022). Examples of issues to be dealt with are default inputs for things such as beaver presence, backwatering and embeddedment. In a perfect world we spend very little time fixing errors over and over again. We use our time to modify the scripts that produce the data and move on to improving our reporting and software products with our time. 
+  1. QA the data in QGIS, see [Data Cleaning]
+  2. Input the data into the appropriate provincial submission templates, see [Data Submission]
 
-+ PSCIS assessment data - [template download page](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/assessment-projects) 
 
-+ Fish and fish habitat data is not "fish passage" data per se but is used in our reporting systems [template download page](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data#submitfish)
+We are looking to minimize hand work as it is time consuming, leads to errors and does not lend itself to reproducibility. In addition, we are continually improving our digital field forms so issues that inhibit the data to be transferred simply between digital forms and provincial templates should be dealt with through issues to [`dff-2022`](https://github.com/NewGraphEnvironment/dff-2022). In a perfect world we spend very little time fixing errors over and over again. We use our time to modify the scripts that produce the data and move on to improving our reporting and software products with our time. 
+
+
 
 ## Data Cleaning
 
@@ -51,8 +53,11 @@ We want to identify the active road tenure holder because they can often help wi
   
 An example is shown below and additional instruction can be found [here](https://github.com/NewGraphEnvironment/onboarding/issues/97). The `Road tenure` for the starred crossing would be `Canfor R01860`. 
 
-![](fig/road_tenure_ex.png)
-  
+<br>
+
+![](fig/data_management/road_tenure_ex.png)
+<br>
+
 ```{r xref-rd-tenure-names, results="asis"}
 
 my_caption = "Road tenure holders and their abbreviated names"
@@ -87,3 +92,174 @@ Here is list of things to consider when assigned a priority to a site:
 Having assessed a stream crossing and identified it as a possible candidate for remediation, the next phase is to carry out a Habitat Confirmation, known as phase 2. A Habitat Confirmation quantifies the amount of habitat and qualifies the type of habitat which stands to be regained if a given crossing is remediated. Phase 2 isn't really about a "return visit" as much as it is about the level of detail we conduct. If we can see that the site is a good candidate for replacement,  we will sometimes do a phase 1 and 2 assessment (detailed walk and fish sampling) all in one day to try to use our time most effectively.
 
   + Ensure locations for habitat surveys are at the **downstream** end. Remove excessive features that do not seem significant. However, you can make a note of them in the comments column. This should be done during the data entry stage so that the reporting and mapping products are accurate from the start.
+  
+  
+
+  
+## Data Submission
+
+### PSCIS Phase 1
+
+After the data is QAed, it is transferred to the appropriate Phase 1 submission spreadsheet. Although all are Phase 1 barrier assessments, they are organized into three distinct groups based on the crossing's assessment history. Each group is submitted in a separate but identical spreadsheet, renamed for each group:
+
+  1. **Phase 1**: The crossing was assessed for the first time. They go in `pscis_phase1.xlsm`.
+  2. **Phase **: A Habitat Confirmation was completed at this crossing, which includes a barrier assessment, regardless of if the crossing was previously assessed. They go in `pscis_phase2.xlsm`.
+  3. **Reassessment**: The crossing was previously assessed, and we are conducting a reassessment. They go in `pscis_reassessments.xlsm`.
+  
+<br>
+
+A link to the BC Government PSCIS User Guide containing submission procedures can be found at the link [here](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/pscis-user-guide-v2.pdf) [@provinceofbritishcolumbia2017PSCISUser]
+
+<br>
+
+New Graph specific submission procedures are as follows:
+
+  1. Download the latest PSCIS Phase 1 submission spreadsheet [here](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/assessment-projects), to the `<repo_name>/data` folder. Duplicate the file and rename them as follow: `pscis_phase1.xlsm`, `pscis_phase2.xlsm`, `pscis_reassessments.xlsm`.
+  2. Use [0130_pscis_export_to_template.R](https://github.com/NewGraphEnvironment/fish_passage_template_reporting/blob/main/scripts/01_prep_inputs/0130_pscis_export_to_template.R) to transfer the cleaned data to the submission spreadsheets.
+  3. Use [0140-pscis-export-submission.R](https://github.com/NewGraphEnvironment/fish_passage_template_reporting/blob/main/scripts/01_prep_inputs/0140-pscis-export-submission.R) to transfer the photos and submission spreadsheet file to the PSCIS submission folders on OneDrive (`OneDrive-Personal/Projects/submissions/PSCIS`.)
+  4. Using the PC computer, move the select `OneDrive-Personal/Projects/submissions/PSCIS` folders from OneDrive to the `Documents/submissions` folder on the local machine. This is because the macros do not allow you to submit the spreadsheet from OneDrive so the submission folder needs to be transferred to a directory on your local machine.
+  5. For each spreadsheet, add in the budget on the cover page, `Validate` the spreadsheet and fix any errors, then `Generate Submission` and follow the pop up instructions. For the user reference, use the format `Project location_year_phase_date of submission` (example `peace_2024_phase1_20241223`). 
+
+<br>
+
+Some details/tips that are important in the workflow of Phase 1 submission are listed below:
+
+  - It is very important to use only `copy+paste+special values` (right click or `control + command + V`) when copying the data into the submission spreadsheets as there are "standards" in the input spreadsheets that can be violated with regular copy paste leading to issues later on in the submission process.
+  - You should have a submission folder for each distict group of Phase 1 barrier assessments (Phase 1, phase 2, and Reassessments) in `OneDrive-Personal/Projects/submissions/PSCIS`.
+
+  - Before you `Generate Submission`, the submission folder should contain:
+      - The excel submission spreadsheet
+      - Individual site folders each with the 6 required photos for submission. This is checked in `0140-pscis-export-submission.R`.
+      - A `.txt` file titled `readme.txt` which contains:
+          -   a link where the gitbook report can be found
+          -   a link where the pdf report can be found
+          -   a link where the scripts to produce online interactive reporting and pdfs are located
+          -   a link where the raw report data can be found
+
+<br>
+
+Some helpful links:
+  
+  - Link to log in to the PSCIS Phase 1 submission (ESF) portal. Use this to view the status of a submission or see past submissions.  https://apps.nrs.gov.bc.ca/ext/esf/submissionWelcome.do 
+  - Link to upload a PSCIS Phase 1 submission, although this is provided during `Generate Submission` pop up: https://www.env.gov.bc.ca/csd/imb/soft/soft.shtml
+
+<br>
+
+
+### Fish Data and Habitat Confirmations
+
++ Fish and fish habitat data is not "fish passage" data per se but is used in our reporting systems [template download page](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data#submitfish)
+
+**NOTE before beginning**: The way to document all changes in `habitat_confirmations.xls` so that we can go back if something get really mangled (easy for that to happen with copy paste values in those spreadsheets) is to use the `fpr_import_hab_con(row_empty_remove = T)` function between steps and commit the resulting csv files that get generated in the `data/backup` directory. Run `fpr_import_hab_con(row_empty_remove = T)` AND COMMIT with really informative commit message after each step that involves moving rows and other moves that you think have potential to result in mangled files.
+
+Steps to QA and submit habitat confirmation data contained in `habitat_confirmations.xls` :
+
+-   If not done yet, ensure the UTM coordinates for each site are at the **downstream** starting point of the survey. Use basecamp to see GPS tracks and copy and paste coordinates to spreadsheet. Remove excessive features that aren't significant
+
+-   Make a lightweight current bcfishpass project on mergin in the Projects/gis/ directory using the qlr from the up to date bcfishpass repo.
+
+-   Update the mapping objects (gpkg and geojson) in the report repo to confirm the locations are correct. Link to the geojsons directly in mergin project.
+
+-   Add the 1:50,000 watershed codes to the spreadsheet. These can be found programmatically using a script. An example can be found in the skeena 2022 repo [here](https://github.com/Mateo9569/fish_passage_skeena_2022_reporting/blob/main/scripts/03_permit_submission/extract_wsc_move_alias.R).
+
+    -   Look up the referenced [stream layer](https://catalogue.data.gov.bc.ca/dataset/wsa-stream-routes-50-000/resource/d694884b-97a6-4d34-9ece-263aa46974f5) in QGIS and QA sample sites to make sure the codes are correct before submission. **NOTE** if there is no 1:50,000 watershed code available for a site, enter the code of the nearest parent stream in the `alias_local_name` field.
+
+-   Run the QA tool that ships with the submission template. The link to the tool within the spreadsheet is broken. The tool can be downloaded on this page [here](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data)
+
+-   Run code at the end of the `extract_wsc_move_alias` script so you can extract the local names of our sites and burn to csv. Erase the local names from the submission sheet AFTER copying and moving the file ready for submission. Move the file to a folder on OneDrive and ensure the name of the permit number is included in the file name (ex: `SM21-626611_data.xls`)
+
+-   Visit the [BC Fish Data Submission Page](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data#submitfish) and login to the sharepoint submission site (link at the bottom of the page) to complete a project submission form. See old submissions on this page for guidelines and examples.
+
+### PSCIS Phase 2
+
+The project is set up within the submission interface which can be found at the link below:
+
+<https://logon7.gov.bc.ca/clp-cgi/capBceid/logon.cgi?flags=1101:1,8&TARGET=$SM$https%3a%2f%2fa100%2egov%2ebc%2eca%2fext%2fpscis-ui>
+
+A link to the BC Government PSCIS User Guide containing habitat confirmation submission procedures can be found at the link [here](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/pscis-user-guide-v2.pdf) [@bcgovernment2017PSCISUser].
+
+```         
++ MAPS DOWNOAD FROM https://hillcrestgeo.ca/outgoing/fishpassage/projects/
+```
+
+Copy and paste the key information from the associated online report into the each of the `Crossing ID` reporting interfaces. A KEY area to get info from are the tables in the Results and Discussion section of the online reports (amount of habitat, species and comments). This information comes from the custom csv file `habitat_confirmations_priorities.csv` located in the `data` directory of each repo.
+
+-   Almost always the surveyed crossings are connected to downstream habitat so you will almost always click this box - unless there are barriers downstream and we know somehow (background info or sampling) that there is no fish presence at all upstream (non-fish bearing).
+
+-   Recommendation - proceed to design unless there is some reason its not worth it at all (priority - no fix or potentially low with complications of some sort)
+
+-   Amount of habitat upstream (NOT THE MODELLING data but a more conservative estimate found in text - in the `Conclusion` and `Stream Characteristics Upstream` section of the individual site memo appendices of the online report).
+
+-   Habitat Value - see `Conclusion` and `Stream Characteristics Upstream` sections of individual memos for the `low`, `medium` and `high` rating.
+
+-   Habitat Value Rationale - see `Conclusion` and `Stream Characteristics Upstream` sections of individual memos for some brief details of why the habitat was rated as it was. See Table 3.3 of main report for some *guideline* criteria.
+
+-   PLEASE NOTE that the online version of the PDF maps from this project are archived within <https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2021-04-21/> . The links in the online report memo appendices will take you to the latest versions of the maps and it will not be easy to find the sites. You should look at the context for each site within the **PDF** maps because sometimes there are relevant things to see and potentially note. For example - for Site 123794 (example completed) there is a DV (dolly varden) fish observation upstream of the crossing that can be noted. Usually the species are described in the `Background` section of each memo (check there first) but if not - to see what the codes are you can search in the [Fisheries Inventory Data Queries](https://a100.gov.bc.ca/pub/fidq/viewWatershedDictionary.do) `Fish Species Codes Query` or you can view a lookup within the `Species by Common Name` page of the [Fish Data Submission Template](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/blob/master/data/habitat_confirmations.xls)
+
+-   Photos are in the `data/photo/<site_id>` directories. The `upstream`, `downstream`, `inlet`, `outlet` and`barrel` photos are already loaded to the provincial system so upload five others (pick the ones with a `_k_` in the filename FIRST as those are the ones from the report. If there is a `_d_` in the filename it is from downstream and if there is a `_u_` it is upstream. If there are not enough photos, pick extra photos from the habitat survey and label them with a `_k_nm_`. This is important as this filters out these photos from our interactive map so we don't clutter it. Put very brief note in mandatory `Description` box (ex. habitat downstream).
+
+-   Upload the correct PDF map from your locally unzipped <https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2021-04-21/bulkley_2021-04-21.zip> . Copy the filename from the map to populate the mandatory `Description` box. You can tell which is the right map from the name of the MAPGRID listed in the end of the `Background` section of each memo. See example completed site.
+
+### PSCIS Phase 3 - Design
+
+Read instructions in [PSCIS User Guide](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/pscis-user-guide-v2.pdf) section titled : `Initiating a Design Project`.
+
+-   `Responsible Party` is SERN BC (input their client number)
+-   `Responsible Party` contact info is Al Irvine
+-   `Consultant Information` section is the engineering company that carried out the design
+-   `Expiry Date` can be 5 years from the proposal date (include note in comments "Remediation proposal expiry date estimated at submission and may not be accurate. Signing engineer should be consulted." )
+-   In `Designer's Comments` field, include info on who completed submission and links to site assessment appendixes in reports.
+
+Methods for engineering standards are found in @provinceofbritishcolumbia2013FishPassage
+
+### PSCIS Phase 4 - Remediation
+
+Read instructions in [PSCIS User Guide](https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/land-based-investment/forests-for-tomorrow/pscis-user-guide-v2.pdf) section titled : `Initiating a Remediation Project`. 
+
+## Planning
+
+In preparation for field work, we screen `bcfishpass` modelling outputs for sites that are likely to have high value habitat. These steps can be found in the field planning scripts `extract_planning.R`, check them out in the [Fraser 2023 repo](https://github.com/NewGraphEnvironment/fish_passage_fraser_2023_reporting/blob/main/scripts/extract_planning.R) for a starting point. Preliminary workflows are described below.:
+
+  * Add columns for comments and a priority ranking for follow up (no fix, low, mod, high)
+  * Add column called `my_citation_key1` through `my_citation_key3` so that we can add zotero citation keys, use pull them out and use these citation keys to populate the references in the year end report.
+  * We want to keep the entire `bcfishpass.crossings` table (with our new columns) vs make a new object without some of the sites. We can just query them out.
+  * Look at sites that have no crossings downstream so that we don't review the same tributary system over and over again.
+  * Filter the crossings to select ones that meet some or all of the following criteria. These crossings will undergo a detailed review to facilitate prioritization for Phase 1 Fish Passage Assessments and Phase 2 Habitat Confirmations:
+  
+    + Confirmed fish presence upstream of the structure.
+    + Stream width documented as > 2.0m.
+    + Linear lengths of modelled upstream habitat <8% gradient for ≥1km.
+    + Crossings located on streams classified as 3rd order or higher.
+    + Crossings located on streams with >5 ha of modeled wetland and/or lake habitat upstream.
+    + Habitat value rated as “medium” or “high” in PSCIS.
+  * Export the sites to a geopackage. Queries for review can be done in QGIS query builder and should be saved in a corresponding repo, see info in next steps.
+  * Through the process of review we update the `bcfishpass` repo. There are lots of opportunities to increase the state of knowledge for all including the modelling through the csvs at https://github.com/smnorris/bcfishpass/tree/main/data . It is important to understand what all of them do and use them all when appropriate.
+  * Scoping for field sites is an opportunity to review background info and add references to zotero.
+
+
+After executing the preliminary workflows described above you can view the sites in QGIS by following these steps:
+
+  1. Sync with mergin first - this makes a huge difference because other team members may be working on the same QGIS project. Do this from another project to avoid conflicting `.qgs` files
+  2. Open your new layer in the Q project, import it as a layer (don't rename anything)
+  3. Put it somewhere in the menu you consider rational
+  4. Symbolize it so you can see it really nicely.  Double click the layer to get to its properties
+  5. Use the `query builder` to filter so you only see the layers that have a `my_review = TRUE` created the in its properties (`Source` window in properties)
+  6. Add it to the reporting theme (be sure to **1. refresh that theme, 2. add only that layer, then 3. "Replace theme"** 
+ 
+  ![](fig/themes.png)
+  
+  7. Find out how to "dock" your attribute table in the bottom of your screen so you can work on editing the table while still looking at the map.  Right-click layer to see attribute table.
+  8. Sort by CO rearing habitat descending (just click in attribute table) and have a look at the first 3 sites. Review all the columns and learn what they do. Remember that we have access to all the column comments (that have them) by a move scripted in `tables.R` and some of them we put in our report methods tables.  
+  9. Be aware that we visited many sites this summer and you should see that data beside or on top of some of the sites. You should click into the `field data` of already assessed sites and see what it says.  Photos for those sites are in the file too so you can look at those. 
+  10. If there is no associated field site you can fill in the custom columns as follows. For priority it is one of the following `no_fix`, `low`,`mod` and `high`. The `my_priority_comments` should include a justification for why it was given that ranking. For example, "stream appears to have good flow and tons of gravel in PSCIS photos" (accessible through `image_view_url` if it has a phase 1 completed already) or "known Chinook spawning location just downstream and target stream for restoration by Nechako streamkeepers." `no_fix` are often ones that need adjustments in `bcfishpass` csvs.
+  11. When you can tell a site is not a bridge or removed and it seems like a decent candidate to look at you can search its stream name (or parent stream name in [EcoCat](https://a100.gov.bc.ca/pub/acat/public/welcome.do)).  We don't really want excel files of fish data (usually accessible through the `fiss` layers in QGIS) but if there are relevant reports they go in `Zotero/region/` or `Zotero/region/watershed_group_code/` dependent on their context.  They can then be referenced in the `my_citation_key*` columns, for example, `my_citation_key1` = properly formated Zotero citation key.
+
+
+Finally, the following are guidelines for planning workflows done shortly before field work days:
+
+* Research the watershed of interest and try to identify major tributaries of interest
+* Even if they did not appear in preliminary prioritization, investigate crossings that could be valuable
+* Regularly check satellite imagery for clues and evidence that a crossing does or doesn't exist, this can save time in the field (ex: deactivated roads or fords). Add fords and bridges that aren't modelled as open bottom structures to the bcfishpass repo.
+* Look out for streams that have fish points upstream, especially salmonids. 
+* Gather helpful information on crossings by reading past survey comments (if available).
+
