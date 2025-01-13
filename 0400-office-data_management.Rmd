@@ -1,0 +1,89 @@
+# Office Data Management
+
+## Data Management
+
+-   All fish passage data is inputted into the appropriate provincial submission templates (make sure you have latest version). It is very important to use only `copy+paste+special values` (right click or `control + command + V`) as there are "standards" in the input spreadsheets that can be violated with regular copy paste leading to issues later on in the submssion process.
+
+We are looking to minimize hand work as it is time consuming, leads to errors and does not lend itself to reproducibility. In addition, we are continually improving our digital input forms so issues that do not allow the data to be transferred simply between digital forms and provincial templates should be dealt with through issues to [`dff-2022`](https://github.com/NewGraphEnvironment/dff-2022). Examples of issues to be dealt with are default inputs for things such as beaver presence, backwatering and embeddedment. In a perfect world we spend very little time fixing errors over and over again. We use our time to modify the scripts that produce the data and move on to improving our reporting and software products with our time. 
+
++ PSCIS assessment data - [template download page](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/assessment-projects) 
+
++ Fish and fish habitat data is not "fish passage" data per se but is used in our reporting systems [template download page](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data#submitfish)
+
+## Data Cleaning
+
+Before data is imported to the PSCIS submission forms all data including the comments should be QA'd for spelling, to look for issues and add information. 
+
+A good way to do that is to copy and paste text into a table in word so you can see it nicely and get an intuitive spell check. Spelling and typo can be changed in QGIS. But if there are any repetitive errors, using R tidyverse functions will save time. 
+
+Exporting the PSCIS data to a gpkg is a great way to view everything spatially (ADD LINK to EXAMPLE). It can help clear up issues of missing information or incorrect data such as modelled crossing ids.
+
+To see the site photos, look in Mergin and/or Onedrive directories. 
+
+### PSCIS phase 1 data QA
+
+Here is a rough list of things to check at each site for phase 1 QA:
+
+  + Correct spelling.
+  + Clear concise comments.
+  + Add any relevant info from climate change assessments comments or pictures to the main `assessment_comments` column.
+  + Backwatered, is the box ticked, does it align with the photos?
+  + Embeddedment, is the box ticked, does it align with the photos?
+  + Correct number of `moti_chris_culvert_id`. Check photos and comments to see how many culverts there are. If it's a major Moti structure than include the `chris_hwy_structure_road_id` instead. Beware that MoTi datasets are really bad and often incorrect.
+  + Beaver activity, is the box ticked, does it align with the photos?
+  + Fish observations during assessment, is the box ticked?
+  + Is the crossing type correct, check photos.
+  + Are the 6 photos correct? Barrel, inlet, outlet, upstream, downstream, and road. If a photo is truly missing (check photo folder first) then add a `no_photo` photo to the site folder. 
+  + Is there an important landowner nearby? If so, could we collaborate?
+  + Has there been past restoration work at the site? Search stream name in [EcoCat](https://a100.gov.bc.ca/pub/acat/public/welcome.do). If yes and there is a link to a report, add relevant info and url link to the assessment comments. Additionally, add the reference to `Zotero/region/` and then add the citation key to the `my_citation_key` column.
+  + Is the culvert relatively close to the modelled crossing? If it's more than ~30m away then create an issue for the site with a reminder to make sure `bcfishpass` links once the data is in PSCIS and if not link with [bcfishpass csv](https://github.com/NewGraphEnvironment/bcfishpass/blob/main/data/pscis_modelledcrossings_streams_xref.csv).
+  + Move survey sites to their proper locations by comparing with tracks and waypoints and remove unnecessary features. This should be done during the data entry stage so that the reporting and mapping products are accurate from the start.
+  + Check out an example of the data cleaning process [here](https://github.com/NewGraphEnvironment/onboarding/issues/90).
+  
+  
+#### Road Tenure Holder
+
+We want to identify the active road tenure holder because they can often help with replacing the crossing. Use the table below to abbreviate the `client_name` so that it displays in our report tables nicely (Table \@ref(tab:xref-rd-tenure-names)). 
+
+ - Query the` FTEN road layer` and add the active (`life_cycle_status_code = ACTIVE`) road tenure holder (`client_name`) to the `Road tenure` field in the form. 
+
+  - When the `client_name` is someone **other** than the MoF (Ministry of Forest) or BCTS (BC Timber Sales) we document the `map_label` as well because this helps us specify the exact road section where the crossing is located. To do this, grab the abbreviated `client_name` from the table below, append the `map_label` from the ` FTEN road layer` to the end, then add it to the `Road tenure` field in the form. 
+  
+An example is shown below and additional instruction can be found [here](https://github.com/NewGraphEnvironment/onboarding/issues/97). The `Road tenure` for the starred crossing would be `Canfor R01860`. 
+
+![](fig/road_tenure_ex.png)
+  
+```{r xref-rd-tenure-names, results="asis"}
+
+my_caption = "Road tenure holders and their abbreviated names"
+my_tab_caption()
+
+
+sfpr_xref_rd_tenure_names() |> 
+  dplyr::rename("Client Name" = client_name) |> 
+  dplyr::rename("Client Name Abbreviated" = client_name_abb) |> 
+  my_dt_table()
+```
+  
+
+<br>
+
+
+#### Assigning Priority Ranking 
+
+Here is list of things to consider when assigned a priority to a site:
+
++ Is the site a barrier to fish passage?
++ Is it valuable habitat? Or could be with some restoration work?
++ Are there fish observations upstream, check using `bsfishobs` layer. If so, what species? Upstream presence of BT, CH, CO, BB is more important than RB and much more than coarse species like CC, LSU and PCC.  They all matter but we prioritize the more rare and generally more "valued". Mention BT, CH or CO if they are known upstream or are very close downstream (same stream or downstream trib before major system).
++ Unassessed crossings downstream?
++ Valuable landowners nearby?
++ Should the site be added to the "follow up with a habitat confirmation" list?
++ If it's a OBS (bridge, ford, etc) then you don't need to assign a priority.
+
+
+### PSCIS phase 2 data QA 
+
+Having assessed a stream crossing and identified it as a possible candidate for remediation, the next phase is to carry out a Habitat Confirmation, known as phase 2. A Habitat Confirmation quantifies the amount of habitat and qualifies the type of habitat which stands to be regained if a given crossing is remediated. Phase 2 isn't really about a "return visit" as much as it is about the level of detail we conduct. If we can see that the site is a good candidate for replacement,  we will sometimes do a phase 1 and 2 assessment (detailed walk and fish sampling) all in one day to try to use our time most effectively.
+
+  + Ensure locations for habitat surveys are at the **downstream** end. Remove excessive features that do not seem significant. However, you can make a note of them in the comments column. This should be done during the data entry stage so that the reporting and mapping products are accurate from the start.
