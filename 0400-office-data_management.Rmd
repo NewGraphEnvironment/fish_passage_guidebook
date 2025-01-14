@@ -22,22 +22,23 @@ Exporting the PSCIS data to a gpkg is a great way to view everything spatially (
 
 To see the site photos, look in Mergin and/or Onedrive directories. 
 
-### PSCIS phase 1 data QA
+### PSCIS Phase 1 Data QA
 
 Here is a rough list of things to check at each site for phase 1 QA:
 
   + Correct spelling.
-  + Clear concise comments.
+  + Clear, concise comments.
   + Add any relevant info from climate change assessments comments or pictures to the main `assessment_comments` column.
   + Backwatered, is the box ticked, does it align with the photos?
   + Embeddedment, is the box ticked, does it align with the photos?
-  + Correct number of `moti_chris_culvert_id`. Check photos and comments to see how many culverts there are. If it's a major Moti structure than include the `chris_hwy_structure_road_id` instead. Beware that MoTi datasets are really bad and often incorrect.
   + Beaver activity, is the box ticked, does it align with the photos?
   + Fish observations during assessment, is the box ticked?
+  + Correct number of `moti_chris_culvert_id`. Check photos and comments to see how many culverts there are. If it's a major Moti structure than include the `chris_hwy_structure_road_id` instead. Beware that MoTi datasets are really bad and often incorrect.
   + Is the crossing type correct, check photos.
+  + Is the assessment type (Phase 1, Phase 2, or Reassessment) correct? For clarification see [PSCIS Phase 1]. 
   + Are the 6 photos correct? Barrel, inlet, outlet, upstream, downstream, and road. If a photo is truly missing (check photo folder first) then add a `no_photo` photo to the site folder. 
   + Is there an important landowner nearby? If so, could we collaborate?
-  + Has there been past restoration work at the site? Search stream name in [EcoCat](https://a100.gov.bc.ca/pub/acat/public/welcome.do). If yes and there is a link to a report, add relevant info and url link to the assessment comments. Additionally, add the reference to `Zotero/region/` and then add the citation key to the `my_citation_key` column.
+  + Has there been past restoration work at the site? Search the stream name in [EcoCat](https://a100.gov.bc.ca/pub/acat/public/welcome.do). If yes and there is a link to a report, add relevant info and url link to the assessment comments. Additionally, add the reference to `Zotero/region/` and then add the citation key to the `my_citation_key` column.
   + Is the culvert relatively close to the modelled crossing? If it's more than ~30m away then create an issue for the site with a reminder to make sure `bcfishpass` links once the data is in PSCIS and if not link with [bcfishpass csv](https://github.com/NewGraphEnvironment/bcfishpass/blob/main/data/pscis_modelledcrossings_streams_xref.csv).
   + Move survey sites to their proper locations by comparing with tracks and waypoints and remove unnecessary features. This should be done during the data entry stage so that the reporting and mapping products are accurate from the start.
   + Check out an example of the data cleaning process [here](https://github.com/NewGraphEnvironment/onboarding/issues/90).
